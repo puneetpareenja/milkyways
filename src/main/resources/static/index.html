@@ -1,12 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Milkyways</title>
+    <title>MilkyWays</title>
+    <meta name = "viewport" content ="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+<!-- load icon library from cloudfare.com -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-<h1>Welcome to milkyways website</h1>
+        <div class="tab">
+           <h1> MilkyWays Online Store</h1><br>
+            <img src="logo.jpg" width="150" height="150"   alt=" "/><br>
+            <button class="tablinks" onclick= "openHome()">Home</button>
+            <button class="tablinks" onclick="openProducts()">Produtcs</button>
+            <button class="tablinks" onclick="openContactUs()">Contact Us</button>
+            <button class="tablinks" onclick="openPromotions()">Promotions</button>
+            <button class="tablinks" onclick="openFeeback()">Feedback</button>
+            <button class="tablinks" onclick="openOrders()">Orders / Cart</button>
+            <button class="tablinks" onclick="openLogin()">Login</button><br>
+           <form class = "searchClass" action="">
+               <label>
+                   <input type="text"  placeholder="Search" name ="search" >
+               </label>
+               <button type="submit" ><i class ="fa fa-search"></i></button>
+</form>
+        </div>
+        
+        <!-- tab content -->
+    <div  class = "tabcontent" >
+                <h3>Home</h3>
+                <p> Welcome To our Miklkyways Online Store, we provide ... </p>
+    </div>
+   
+
+   
 </body>
+
 </html>

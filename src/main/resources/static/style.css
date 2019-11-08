@@ -1,0 +1,79 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+
+/* style the tab */
+.tab{
+overflow: hidden;
+border: 1px coral;
+background-color: #ebf596;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: none;
+    border: black;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    /* transition: 0.4s; */
+    font-size: 16px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: rgb(228, 163, 193);
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button:active {
+    background-color: rgb(133, 211, 179);
+  }
+  
+  /* Style the tab content*/
+ #home-fadeOut  {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 300ms, opacity 300ms;
+  }
+
+  #home-fadeIn{
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 300ms;
+  }    
+  /* @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  } */
+
+
+  /* style of search bar */
+  .tab input[type=text] {
+    padding: 6px;
+    border: rebeccapurple;
+ width: 50%;;
+    font-size: 10pt;
+  }
+  /* style of submit button */
+  form.searchClass button{
+    width: 10%;
+    padding: 6px;
+    color: salmon;
+    border-left: none;
+    cursor: pointer;
+    background: seagreen;
+
+  } 
+form.searchClass button:hover{
+  background: rgb(172, 101, 179);
+}
+/* Clear floats */
+form.searchClass::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+  
