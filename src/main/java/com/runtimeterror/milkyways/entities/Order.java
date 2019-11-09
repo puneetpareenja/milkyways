@@ -9,10 +9,10 @@ import java.util.Date;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long orderid;
-    private long custid;
+    private long orderId;
+    private long customerId;
     private Date date;
-    private MenuItem[] menuItem;
+    private Item[] items;
     private double total;
 
 }
