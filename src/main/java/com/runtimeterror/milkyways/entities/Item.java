@@ -6,16 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class MenuItem {
+public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long itemid;
-    private long bakeryid;
+    private long itemId;
+    private long storeId;
     private String name;
     private long quantity;
     private boolean type; //0: sweet, 1: savoury
-    private boolean sugarfree;
-    private boolean glutenfree;
+    private boolean sugarFree;
+    private boolean glutenFree;
     private boolean vegetarian;
     private float price;
 }

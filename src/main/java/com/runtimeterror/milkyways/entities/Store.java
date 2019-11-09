@@ -6,11 +6,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Bakery {
+public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long bakeryid;
-    private String bakeryname;
+    private long storeId;
+    private String storeName;
     private String address;
     private String phone;
 }

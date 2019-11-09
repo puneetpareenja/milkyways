@@ -9,9 +9,9 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long custid;
-    private String firstname;
-    private String lastname;
+    private long customerId;
+    private String firstName;
+    private String lastName;
     private String password;
     private String email;
     private Address address;
