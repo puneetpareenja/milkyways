@@ -9,10 +9,10 @@ import javax.persistence.Id;
 public class MenuItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int itemid;
-    private int bakeryid;
+    private long itemid;
+    private long bakeryid;
     private String name;
-    private int quantity;
+    private long quantity;
     private boolean type; //0: sweet, 1: savoury
     private boolean sugarfree;
     private boolean glutenfree;
