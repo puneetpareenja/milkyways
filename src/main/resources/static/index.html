@@ -1,40 +1,378 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>MilkyWays</title>
-    <meta name = "viewport" content ="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-<!-- load icon library from cloudfare.com -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Milkyway</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
-
 <body>
-        <div class="tab">
-           <h1> MilkyWays Online Store</h1><br>
-            <img src="logo.jpg" width="150" height="150"   alt=" "/><br>
-            <button class="tablinks" onclick= "openHome()">Home</button>
-            <button class="tablinks" onclick="openProducts()">Produtcs</button>
-            <button class="tablinks" onclick="openContactUs()">Contact Us</button>
-            <button class="tablinks" onclick="openPromotions()">Promotions</button>
-            <button class="tablinks" onclick="openFeeback()">Feedback</button>
-            <button class="tablinks" onclick="openOrders()">Orders / Cart</button>
-            <button class="tablinks" onclick="openLogin()">Login</button><br>
-           <form class = "searchClass" action="">
-               <label>
-                   <input type="text"  placeholder="Search" name ="search" >
-               </label>
-               <button type="submit" ><i class ="fa fa-search"></i></button>
-</form>
+
+<div class="site-wrap">
+
+
+    <div class="site-navbar bg-white py-2">
+
+        <div class="search-wrap">
+            <div class="container">
+                <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+                <form action="#" method="post">
+                    <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+                </form>
+            </div>
         </div>
-        
-        <!-- tab content -->
-    <div  class = "tabcontent" >
-                <h3>Home</h3>
-                <p> Welcome To our Miklkyways Online Store, we provide ... </p>
+
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="logo">
+                    <div class="site-logo">
+                        <a href="index.html" class="js-logo-clone">Milkyway</a>
+                    </div>
+                </div>
+                <div class="main-nav d-none d-lg-block">
+                    <nav class="site-navigation text-right text-md-center" role="navigation">
+                        <ul class="site-menu js-clone-nav d-none d-lg-block">
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class><a href="shop.html">Shop</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="icons">
+                    <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
+                    <a href="#" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
+                    <a href="cart.html" class="icons-btn d-inline-block bag">
+                        <span class="icon-shopping-bag"></span>
+                        <span class="number">2</span>
+                    </a>
+                    <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
+                </div>
+            </div>
+        </div>
     </div>
-   
 
-   
+    <div class="site-blocks-cover" data-aos="fade">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 ml-auto order-md-2 align-self-start">
+                    <div class="site-block-cover-content">
+                        <h2 class="sub-title">Milkyway presents<p>
+                            A thoughtful expression of modern craft through good food and warm experiences</h2>
+                    </div>
+                </div>
+                <div class="col-md-6 order-1 align-self-end">
+                    <img src="images/pancakes.gif" alt="Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-section">
+        <div class="container">
+            <div class="title-section mb-5">
+                <h2 class="text-uppercase"><span class="d-block">Discover</span> The Selections</h2>
+            </div>
+            <div class="row align-items-stretch">
+                <div class="col-lg-8">
+                    <div class="product-item sm-height full-height bg-gray">
+                        <a href="#" class="product-category">Sweet <span>50+ items</span></a>
+                        <img src="images/pie.gif" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="product-item sm-height bg-gray mb-4">
+                        <a href="#" class="product-category">Baked <span>25+ items</span></a>
+                        <img src="images/scone.gif" alt="Image" class="img-fluid">
+                    </div>
+
+                    <div class="product-item sm-height bg-gray">
+                        <a href="#" class="product-category">Savoury <span>30 items</span></a>
+                        <img src="images/pizza.gif" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="title-section mb-5 col-12">
+                    <h2 class="text-uppercase">Popular Items</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 item-entry mb-4">
+                    <a href="#" class="product-item md-height bg-gray d-block">
+                        <img src="images/tart.png" alt="Image" class="img-fluid">
+                    </a>
+                    <h2 class="item-title"><a href="#">Blueberry Tart</a></h2>
+                    <h2 class="bakery-title"><a href="#">Small Victory</a></h2>
+                    <strong class="item-price">$40.00</strong>
+                    <div class="star-rating">
+                        <span class="icon-star2 text-warning"></span>
+                        <span class="icon-star2 text-warning"></span>
+                        <span class="icon-star2 text-warning"></span>
+                        <span class="icon-star2 text-warning"></span>
+                        <span class="icon-star2 text-warning"></span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 item-entry mb-4">
+                    <a href="#" class="product-item md-height bg-gray d-block">
+                        <img src="images/scone2.png" alt="Image" class="img-fluid">
+                    </a>
+                    <h2 class="item-title"><a href="#">Maple Walnut Scone</a></h2>
+                    <h2 class="bakery-title"><a href="#">Purebread</a></h2>
+                    <strong class="item-price">$10.00</strong>
+
+                    <div class="star-rating">
+                        <span class="icon-star2 text-warning"></span>
+                        <span class="icon-star2 text-warning"></span>
+                        <span class="icon-star2 text-warning"></span>
+                        <span class="icon-star2 text-warning"></span>
+                        <span class="icon-star2 text-warning"></span>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 item-entry mb-4">
+                    <a href="#" class="product-item md-height bg-gray d-block">
+                        <img src="images/brulee.gif" alt="Image" class="img-fluid">
+                    </a>
+                    <h2 class="item-title"><a href="#">Creme Brulee</a></h2>
+                    <h2 class="bakery-title"><a href="#">Beaucoup Bakery</a></h2>
+                    <strong class="item-price">$15.00</strong>
+
+                    <div class="star-rating">
+                        <span class="icon-star2 text-warning"></span>
+                        <span class="icon-star2 text-warning"></span>
+                        <span class="icon-star2 text-warning"></span>
+                        <span class="icon-star2 text-warning"></span>
+                        <span class="icon-star2 text-warning"></span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="title-section text-center mb-5 col-12">
+                    <h2 class="text-uppercase">Most Ordered</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 block-3">
+                    <div class="nonloop-block-3 owl-carousel">
+                        <div class="item">
+                            <div class="item-entry">
+                                <a href="#" class="product-item md-height bg-gray d-block">
+                                    <img src="images/birthday-donuts.jpg" alt="Image" class="img-fluid">
+                                </a>
+                                <h2 class="item-title"><a href="#">Birthday Letter Donuts</a></h2>
+                                <h2 class="bakery-title"><a href="#">Cartem Donuts</a></h2>
+                                <strong class="item-price">$90.00</strong>
+                                <div class="star-rating">
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-entry">
+                                <a href="#" class="product-item md-height bg-gray d-block">
+                                    <img src="images/candles.jpg" alt="Image" class="img-fluid">
+                                </a>
+                                <h2 class="item-title"><a href="#">Birthday Beeswax Candles</a></h2>
+                                <h2 class="bakery-title"><a href="#">Milkyway Inc.</a></h2>
+                                <strong class="item-price"><del>$5.00</del> $3.99</strong>
+
+                                <div class="star-rating">
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-entry">
+                                <a href="#" class="product-item md-height bg-gray d-block">
+                                    <img src="images/cupcake.gif" alt="Image" class="img-fluid">
+                                </a>
+                                <h2 class="item-title"><a href="#">Carrot Cupcake</a></h2>
+                                <h2 class="bakery-title"><a href="#">Thierry</a></h2>
+                                <strong class="item-price">$5.00</strong>
+
+                                <div class="star-rating">
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-entry">
+                                <a href="#" class="product-item md-height bg-gray d-block">
+                                    <img src="images/swirl.png" alt="Image" class="img-fluid">
+                                </a>
+                                <h2 class="item-title"><a href="#">Raspberry Swirl Roll</a></h2>
+                                <h2 class="bakery-title"><a href="#">Thierry</a></h2>
+                                <strong class="item-price">$4.00</strong>
+                                <div class="star-rating">
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-entry">
+                                <a href="#" class="product-item md-height bg-gray d-block">
+                                    <img src="images/apple.png" alt="Image" class="img-fluid">
+                                </a>
+                                <h2 class="item-title"><a href="#">Apple Blackberry Pie by the slice</a></h2>
+                                <h2 class="bakery-title"><a href="#">Small Victory</a></h2>
+                                <strong class="item-price">$5.00</strong>
+                                <div class="star-rating">
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                    <span class="icon-star2 text-warning"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="site-blocks-cover inner-page py-5" data-aos="fade">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 ml-auto order-md-2 align-self-start">
+                    <div class="site-block-cover-content">
+                        <h2 class="sub-title">Iconic Gastown bakery 'Cadeaux' now on Milkyway</h2>
+                        <h1>#Newly Added</h1>
+                        <p><a href="#" class="btn btn-black rounded-0">Order Now</a></p>
+                    </div>
+                </div>
+                <div class="col-md-6 order-1 align-self-end">
+                    <img src="images/waffles.gif" alt="Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer custom-border-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <h3 class="footer-heading mb-4">Promo</h3>
+                    <a href="#" class="block-6">
+                        <img src="images/candles.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
+                        <h3 class="font-weight-light  mb-0">Forgetting something? Order some candles with your cake!</h3>
+                        <p>Only for $3.99</p>
+                    </a>
+                </div>
+                <div class="col-lg-5 ml-auto mb-5 mb-lg-0">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="footer-heading mb-4">Quick Links</h3>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <ul class="list-unstyled">
+                                <li><a href="#"><b>Follow Us On</b></a></li>
+                                <li><a href="#">Instagram</a></li>
+                                <li><a href="#">Twitter</a></li>
+                                <li><a href="#">Facebook</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <ul class="list-unstyled">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Our Partners</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <ul class="list-unstyled">
+                                <li><a href="#"></a><b>Developers</b></li>
+                                <li><a href="#">Puneet Pareenja</a></li>
+                                <li><a href="#">Chhavi Kapur</a></li>
+                                <li><a href="#">Navpreet Kaur</a></li>
+                                <li><a href="#">Harvinder Singh</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="block-5 mb-5">
+                        <h3 class="footer-heading mb-4">Contact Info</h3>
+                        <ul class="list-unstyled">
+                            <li class="address">1800 Baker St. Gastown, Vancouver, BC, Canada</li>
+                            <li class="phone"><a href="tel://60423929210">+1 604 3929 210</a></li>
+                            <li class="email">milkyway@test.com</li>
+                        </ul>
+                    </div>
+
+                    <div class="block-7">
+                        <form action="#" method="post">
+                            <label for="email_subscribe" class="footer-heading">Subscribe</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
+                                <input type="submit" class="btn btn-sm btn-primary" value="Send">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/aos.js"></script>
+
+<script src="js/main.js"></script>
+
 </body>
-
 </html>
