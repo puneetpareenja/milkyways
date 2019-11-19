@@ -9,8 +9,9 @@ import javax.persistence.Id;
 public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long storeId;
-    private String storeName;
+    private long storeid;
+    private String storename;
     private String address;
     private String phone;
+
 }

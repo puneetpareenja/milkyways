@@ -9,8 +9,8 @@ import javax.persistence.Id;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long orderId;
-    private long customerId;
+    private long orderid;
+    private long customerid;
     //    private Date date;
 //    @ManyToMany
 //    private ArrayList<Item> items;

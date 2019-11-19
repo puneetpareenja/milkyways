@@ -9,13 +9,13 @@ import javax.persistence.Id;
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long itemId;
-    private long storeId;
+    private long itemid;
+    private long storeid;
     private String name;
     private long quantity;
     private boolean type; //0: sweet, 1: savoury
-    private boolean sugarFree;
-    private boolean glutenFree;
+    private boolean sugarfree;
+    private boolean glutenfree;
     private boolean vegetarian;
     private float price;
 }

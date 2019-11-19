@@ -9,10 +9,10 @@ import javax.persistence.Id;
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long addressId;
+    private long addressid;
     private String apt;
     private String street;
     private String city;
-    private String postalCode;
+    private String postalcode;
 
 }

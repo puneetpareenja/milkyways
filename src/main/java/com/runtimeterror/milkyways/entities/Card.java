@@ -8,7 +8,7 @@ import java.util.Date;
 public class Card {
     @Id
     private long number;
-    private Date expiryDate;
+    private Date expirydate;
     private String name;
 
 }
