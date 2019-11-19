@@ -12,6 +12,7 @@ public class Item {
     private long itemid;
     private long storeid;
     private String name;
+    private String imageurl;
     private long quantity;
     private boolean type; //0: sweet, 1: savoury
     private boolean sugarfree;

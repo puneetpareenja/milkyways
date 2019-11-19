@@ -7,23 +7,13 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long customerid;
-
-
     private String firstname;
-
-
     private String lastname;
-
-
     private String password;
-
     @Column(unique = true, nullable = false)
     private String email;
-
     //    private Address address;
-
     private String phone;
-
     //    private Card card;
 
     public Customer(String firstName, String lastName, String password, String email, String phone) {
