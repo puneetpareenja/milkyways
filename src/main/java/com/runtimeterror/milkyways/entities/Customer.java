@@ -17,10 +17,10 @@ public class Customer {
     private String phone;
     @ManyToMany
     @JoinColumn(name = "addressid")
-    private List<Address> addressList = new ArrayList<>();
+    private List<Address> addresslist = new ArrayList<>();
     @ManyToMany
     @JoinColumn(name="cardnumber")
-    private List<Card> cardList = new ArrayList<>();
+    private List<Card> cardlist = new ArrayList<>();
 
     public Customer() {
 
@@ -33,8 +33,8 @@ public class Customer {
         this.password = password;
         this.email = email;
         this.phone = phone;
-        this.addressList = addressList;
-        this.cardList = cardList;
+        this.addresslist = addressList;
+        this.cardlist = cardList;
     }
 
     public long getCustomerid() {
@@ -85,19 +85,19 @@ public class Customer {
         this.phone = phone;
     }
 
-    public List<Address> getAddressList() {
-        return addressList;
+    public List<Address> getAddresslist() {
+        return addresslist;
     }
 
-    public void setAddressList(List<Address> addressList) {
-        this.addressList = addressList;
+    public void setAddresslist(List<Address> addresslist) {
+        this.addresslist = addresslist;
     }
 
-    public List<Card> getCardList() {
-        return cardList;
+    public List<Card> getCardlist() {
+        return cardlist;
     }
 
-    public void setCardList(List<Card> cardList) {
-        this.cardList = cardList;
+    public void setCardlist(List<Card> cardlist) {
+        this.cardlist = cardlist;
     }
 }

@@ -19,4 +19,6 @@ public class Item {
     private boolean glutenfree;
     private boolean vegetarian;
     private float price;
+
+
 }

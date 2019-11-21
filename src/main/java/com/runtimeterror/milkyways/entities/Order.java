@@ -11,9 +11,6 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long orderid;
     private long customerid;
-    //    private Date date;
-//    @ManyToMany
-//    private ArrayList<Item> items;
-    private double total;
+   
 
 }
