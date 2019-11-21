@@ -1,6 +1,8 @@
 package com.runtimeterror.milkyways.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Customer {
@@ -12,16 +14,27 @@ public class Customer {
     private String password;
     @Column(unique = true, nullable = false)
     private String email;
-    //    private Address address;
     private String phone;
-    //    private Card card;
+    @ManyToMany
+    @JoinColumn(name = "addressid")
+    private List<Address> addresslist = new ArrayList<>();
+    @ManyToMany
+    @JoinColumn(name="cardnumber")
+    private List<Card> cardlist = new ArrayList<>();
 
-    public Customer(String firstName, String lastName, String password, String email, String phone) {
-        this.firstname = firstName;
-        this.lastname = lastName;
+    public Customer() {
+
+    }
+
+    public Customer(String firstname, String lastname, String password, String email,
+                    String phone, List<Address> addressList, List<Card> cardList) {
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.password = password;
         this.email = email;
         this.phone = phone;
+        this.addresslist = addressList;
+        this.cardlist = cardList;
     }
 
     public long getCustomerid() {
@@ -72,15 +85,19 @@ public class Customer {
         this.phone = phone;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "customerId=" + customerid +
-                ", firstName='" + firstname + '\'' +
-                ", lastName='" + lastname + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
+    public List<Address> getAddresslist() {
+        return addresslist;
+    }
+
+    public void setAddresslist(List<Address> addresslist) {
+        this.addresslist = addresslist;
+    }
+
+    public List<Card> getCardlist() {
+        return cardlist;
+    }
+
+    public void setCardlist(List<Card> cardlist) {
+        this.cardlist = cardlist;
     }
 }
