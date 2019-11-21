@@ -4,11 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Testing Page</title>
-    <link rel= "stylesheet" type = "text/css" href = "style.css" />
-</head>
+    <title>Sign Up</title>
+    <link rel= "stylesheet" type = "text/css" href = "./css/formstyle.css" />
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./js/formscript.js"></script>
 
+</head>
 <body>
+
+<div class="form">
+
+        <div id="signup">
+            <h1>Milkyway: Sign up form</h1>
+
+            <form action="/signup" method="get">
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <input type="text" required autocomplete="off" name="firstname" id="firstname" placeholder="First Name*"/>
+                    </div>
+
+                    <div class="field-wrap">
+                        <input type="text"required autocomplete="off" name="lastname" id="lastname" placeholder="Last Name*"/>
+                    </div>
+                </div>
+
+                <div class="field-wrap">
+                    <input type="text"required autocomplete="off" name="phone" id="phone" placeholder="Phone Number*"/>
+                </div>
+
+                <div class="field-wrap">
+                    <input type="email"required autocomplete="off" name="email" id="email" placeholder="Email*"/>
+                </div>
+
+                <div class="field-wrap">
+                    <input type="password"required autocomplete="off" name="password" id="password" placeholder="Set a Password*"/>
+                </div>
+
+                <button type="submit" class="button button-block"/>Get Started</button>
+
+
+
+            </form>
+
+            <br><br>
+            <p class="forgot"><a href="/signin">Existing Customer? Sign in here!</a></p>
+
+        </div>
+</div> <!-- /form -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
 <div class="signup__container">
     <div class="container__child signup__thumbnail">
         <div class="thumbnail__logo">
@@ -64,12 +125,9 @@
         </form>
     </div>
 </div>
-
-</body>
-
+-->
 
 
-</html>
 
 <!--
 

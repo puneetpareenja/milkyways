@@ -15,9 +15,23 @@ public class LoginController {
     @Autowired
     CustomerRepository customerRepository;
 
-    @GetMapping("/signUp")
+    @GetMapping("/signup")
     public ModelAndView addCustomer(Customer customer) {
-        ModelAndView modelAndView = new ModelAndView("testpage.html");
+        ModelAndView modelAndView = new ModelAndView("signup.html");
+        try {
+            customerRepository.save(customer);
+            modelAndView.addObject("customer", customer);
+        } catch (ConstraintViolationException ex) {
+
+        } finally {
+            return modelAndView;
+        }
+    }
+
+
+    @GetMapping("/signin")
+    public ModelAndView checkCustomer(Customer customer) {
+        ModelAndView modelAndView = new ModelAndView("signin.html");
         try {
             customerRepository.save(customer);
             modelAndView.addObject("customer", customer);

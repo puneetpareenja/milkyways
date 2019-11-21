@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign In</title>
+    <link rel= "stylesheet" type = "text/css" href = "./css/formstyle.css" />
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./js/formscript.js"></script>
+
+</head>
+<body>
+
+<div class="form">
+
+        <div id="login">
+            <h1>Welcome Back to Milkyway!</h1>
+            <form action="/signin" method="get">
+
+
+
+                <div class="field-wrap">
+                    <input type="email"required autocomplete="off" name="email" id="email" placeholder="Email*"/>
+                </div>
+
+                <div class="field-wrap">
+                    <input type="password"required autocomplete="off" name="password" id="password" placeholder="Password"/>
+                </div>
+
+                <button class="button button-block"/>Log In</button>
+
+
+            </form>
+            <br><br>
+            <p class="forgot"><a href="/signup">New Customer? Sign up here!</a></p>
+        </div>
+</div> <!-- /form -->
+</body>
+</html>

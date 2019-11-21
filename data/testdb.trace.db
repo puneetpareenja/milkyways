@@ -10,3 +10,18 @@ create table order (orderid bigint not null, customerid bigint not null, total d
 2019-11-20 15:11:37 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE ORDER[*] (ORDERID BIGINT NOT NULL, CUSTOMERID BIGINT NOT NULL, TOTAL DOUBLE NOT NULL, PRIMARY KEY (ORDERID)) "; expected "identifier"; SQL statement:
 create table order (orderid bigint not null, customerid bigint not null, total double not null, primary key (orderid)) [42001-199]
+2019-11-20 22:29:50 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CUSTOMER_ADDRESSLIST[*] SELECT * FROM CUSTOMER"; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT"; SQL statement:
+CUSTOMER_ADDRESSLIST SELECT * FROM CUSTOMER [42001-199]
+2019-11-20 22:29:52 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CUSTOMER_ADDRESSLIST[*] SELECT * FROM CUSTOMER"; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT"; SQL statement:
+CUSTOMER_ADDRESSLIST SELECT * FROM CUSTOMER [42001-199]
+2019-11-20 22:29:56 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CUSTOMER_ADDRESSLIST[*] CUSTOMER_CARDLIST SELECT * FROM CUSTOMER"; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT"; SQL statement:
+CUSTOMER_ADDRESSLIST CUSTOMER_CARDLIST SELECT * FROM CUSTOMER [42001-199]
+2019-11-20 22:29:57 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CUSTOMER_ADDRESSLIST[*] CUSTOMER_CARDLIST SELECT * FROM CUSTOMER"; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT"; SQL statement:
+CUSTOMER_ADDRESSLIST CUSTOMER_CARDLIST SELECT * FROM CUSTOMER [42001-199]
+2019-11-20 22:31:46 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ADDRESS[*] SELECT * FROM CARD"; expected "ALTER, ANALYZE"; SQL statement:
+ADDRESS SELECT * FROM CARD [42001-199]
