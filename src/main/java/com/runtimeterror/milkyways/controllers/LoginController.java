@@ -5,6 +5,7 @@ import com.runtimeterror.milkyways.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.ConstraintViolationException;
@@ -21,7 +22,7 @@ public class LoginController {
         try {
             customerRepository.save(customer);
             modelAndView.addObject("customer", customer);
-        } catch (ConstraintViolationException ex) {
+        } catch (ConstraintViolationException ignored) {
 
         } finally {
             return modelAndView;
@@ -30,15 +31,23 @@ public class LoginController {
 
 
     @GetMapping("/signin")
-    public ModelAndView checkCustomer(Customer customer) {
+    public ModelAndView redirectToSignIn(
+            @RequestParam(name = "email", defaultValue = "") String email,
+            @RequestParam(name = "password", defaultValue = "") String password) {
         ModelAndView modelAndView = new ModelAndView("signin.html");
-        try {
-            customerRepository.save(customer);
-            modelAndView.addObject("customer", customer);
-        } catch (ConstraintViolationException ex) {
 
-        } finally {
-            return modelAndView;
+        if (!email.equals("") || !password.equals("")) {
+            boolean isValid = validateUser(email, password);
+            modelAndView.addObject("isvalid", isValid);
         }
+
+        return modelAndView;
     }
+
+    private boolean validateUser(String email, String password) {
+        Customer customer = customerRepository.findByEmail(email);
+        return customer.getPassword().equals(password);
+    }
+
+
 }

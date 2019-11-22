@@ -1,9 +1,9 @@
 package com.runtimeterror.milkyways.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import javax.persistence.*;
 
 @Entity
 public class Address {
@@ -15,15 +15,29 @@ public class Address {
     private String city;
     private String postalcode;
 
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "customerid")
+    @OnDelete(action= OnDeleteAction.CASCADE)
+    private Customer customer;
+
     public Address() {
 
     }
 
-    public Address(String apt, String street, String city, String postalcode) {
+    public Address(String apt, String street, String city, String postalcode, Customer customer) {
         this.apt = apt;
         this.street = street;
         this.city = city;
         this.postalcode = postalcode;
+        this.customer = customer;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public long getAddressid() {

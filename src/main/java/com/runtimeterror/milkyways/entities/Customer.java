@@ -2,7 +2,9 @@ package com.runtimeterror.milkyways.entities;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Customer {
@@ -15,26 +17,24 @@ public class Customer {
     @Column(unique = true, nullable = false)
     private String email;
     private String phone;
-    @ManyToMany
-    @JoinColumn(name = "addressid")
-    private List<Address> addresslist = new ArrayList<>();
-    @ManyToMany
-    @JoinColumn(name="cardnumber")
-    private List<Card> cardlist = new ArrayList<>();
+    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
+    private Set<Address> addressset = new HashSet<>();
+
+    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
+    private Set<Card> cardlist = new HashSet<>();
 
     public Customer() {
 
     }
 
-    public Customer(String firstname, String lastname, String password, String email,
-                    String phone, List<Address> addressList, List<Card> cardList) {
+    public Customer(String firstname, String lastname, String password, String email, String phone, Set<Address> addressset, Set<Card> cardlist) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.password = password;
         this.email = email;
         this.phone = phone;
-        this.addresslist = addressList;
-        this.cardlist = cardList;
+        this.addressset = addressset;
+        this.cardlist = cardlist;
     }
 
     public long getCustomerid() {
@@ -85,19 +85,19 @@ public class Customer {
         this.phone = phone;
     }
 
-    public List<Address> getAddresslist() {
-        return addresslist;
+    public Set<Address> getAddressset() {
+        return addressset;
     }
 
-    public void setAddresslist(List<Address> addresslist) {
-        this.addresslist = addresslist;
+    public void setAddressset(Set<Address> addressset) {
+        this.addressset = addressset;
     }
 
-    public List<Card> getCardlist() {
+    public Set<Card> getCardlist() {
         return cardlist;
     }
 
-    public void setCardlist(List<Card> cardlist) {
+    public void setCardlist(Set<Card> cardlist) {
         this.cardlist = cardlist;
     }
 }
