@@ -44,6 +44,10 @@ public class LoginController {
         return modelAndView;
     }
 
+
+
+
+
     private boolean validateUser(String email, String password) {
         Customer customer = customerRepository.findByEmail(email);
         return customer.getPassword().equals(password);
