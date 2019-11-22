@@ -14,6 +14,7 @@ public class Address {
     private String street;
     private String city;
     private String postalcode;
+    private String country;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "customerid")
