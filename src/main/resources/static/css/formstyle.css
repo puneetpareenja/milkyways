@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: #ffffff;
+  background: #FFFFFF;
   font-family: 'icomoon';
 }
 
@@ -21,6 +21,7 @@ a:hover {
 }
 
 .form {
+  background: #ffffff;
   padding: 40px;
   max-width: 600px;
   margin: 40px auto;
