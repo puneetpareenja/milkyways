@@ -20,56 +20,18 @@
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<div class="site-wrap">
-    <div class="site-navbar bg-white py-2">
-
-        <div class="search-wrap">
-            <div class="container">
-                <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
-                <form action="#" method="post">
-                    <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
-                </form>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="d-flex align-items-center justify-content-between">
-                <div class="logo">
+<div class="form">
+    <br><br>
+        <div id="signup">
+            <form action="/signup" method="get">
+                <div class="logo" align="center">
                     <div class="site-logo">
                         <a href="/home" class="js-logo-clone">Milkyway</a>
                     </div>
                 </div>
-                <div class="main-nav d-none d-lg-block">
-                    <nav class="site-navigation text-right text-md-center" role="navigation">
-                        <ul class="site-menu js-clone-nav d-none d-lg-block">
-                            <li>
-                                <a href="/home">Home</a>
-                            </li>
-                            <li class><a href="/shop">Shop</a></li>
-                            <li><a href="/about">About Us</a></li>
-                            <li><a href="/contact">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="icons">
-                    <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-                    <a href="#" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
-                    <a href="/cart" class="icons-btn d-inline-block bag">
-                        <span class="icon-shopping-bag"></span>
-                        <span class="number">2</span>
-                    </a>
-                    <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="form">
-
-        <div id="signup">
-            <form action="/signup" method="get">
+                <br><br>
                 <div class="top-row">
                     <div class="field-wrap">
                         <input type="text" required autocomplete="off" name="firstname" id="firstname" placeholder="First Name*"/>
@@ -92,88 +54,17 @@
                     <input type="password"required autocomplete="off" name="password" id="password" placeholder="Set a Password*"/>
                 </div>
 
-                <button type="submit" class="button button-block"/>Get Started</button>
+                <button type="submit" class="btn btn-outline-primary btn-sm btn-block">Get Started</button>
 
 
 
             </form>
 
-            <br><br>
+            <br>
             <p class="forgot"><a href="/signin">Existing Customer? Sign in here!</a></p>
 
         </div>
 </div> <!-- /form -->
-
-<footer class="site-footer custom-border-top">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 ml-auto mb-5 mb-lg-0">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3 class="footer-heading mb-4">Quick Links</h3>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <ul class="list-unstyled">
-                            <li><a href="#"><b>Follow Us On</b></a></li>
-                            <li><a href="#">Instagram</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Facebook</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <ul class="list-unstyled">
-                            <li><a href="/about">About Us</a></li>
-                            <li><a href="/contact">Contact Us</a></li>
-                            <li><a href="#">Our Partners</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <ul class="list-unstyled">
-                            <li><a href="/about"></a><b>Developers</b></li>
-                            <li><a href="#">Puneet Pareenja</a></li>
-                            <li><a href="#">Chhavi Kapur</a></li>
-                            <li><a href="#">Navpreet Kaur</a></li>
-                            <li><a href="#">Harvinder Singh</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3">
-                <div class="block-5 mb-5">
-                    <h3 class="footer-heading mb-4">Contact Info</h3>
-                    <ul class="list-unstyled">
-                        <li class="address">1800 Baker St. Gastown, Vancouver, BC, Canada</li>
-                        <li class="phone"><a href="tel://60423929210">+1 604 3929 210</a></li>
-                        <li class="email">milkyway@test.com</li>
-                    </ul>
-                </div>
-
-                <div class="block-7">
-                    <form action="#" method="post">
-                        <label for="email_subscribe" class="footer-heading">Subscribe</label>
-                        <div class="form-group">
-                            <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
-                            <input type="submit" class="btn btn-sm btn-primary" value="Send">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-</div>
-
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/aos.js"></script>
-
-<script src="js/main.js"></script>
 
 
 </body>
