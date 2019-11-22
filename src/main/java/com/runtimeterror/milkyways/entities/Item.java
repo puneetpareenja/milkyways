@@ -17,7 +17,6 @@ public class Item {
     private boolean vegetarian; //0: not, 1: vegetarian
     private float price;
     private int rating; //1 to 5 stars
-    private String bakery;
 
     @ManyToOne
     @JoinColumn(name = "storeid")
@@ -26,15 +25,17 @@ public class Item {
     public Item() {
     }
 
-    public Item(String name, String imageurl, int quantity, boolean type, boolean sugarfree, boolean glutenfree, boolean vegetarian, float price, Store store) {
+    public Item(String name, String imageurl, int quantity, boolean type, boolean sugarfree, boolean glutenfree, boolean dairyfree, boolean vegetarian, float price, int rating,  Store store) {
         this.name = name;
         this.imageurl = imageurl;
         this.quantity = quantity;
         this.type = type;
         this.sugarfree = sugarfree;
         this.glutenfree = glutenfree;
+        this.dairyfree = dairyfree;
         this.vegetarian = vegetarian;
         this.price = price;
+        this.rating = rating;
         this.store = store;
     }
 
@@ -109,6 +110,14 @@ public class Item {
     public void setPrice(float price) {
         this.price = price;
     }
+
+    public boolean isDairyfree() { return dairyfree; }
+
+    public int getRating() { return rating; }
+
+    public void setDairyfree(boolean dairyfree) { this.dairyfree = dairyfree; }
+
+    public void setRating(int rating) { this.rating = rating; }
 
     public Store getStore() {
         return store;

@@ -25,3 +25,9 @@ CUSTOMER_ADDRESSLIST CUSTOMER_CARDLIST SELECT * FROM CUSTOMER [42001-199]
 2019-11-20 22:31:46 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ADDRESS[*] SELECT * FROM CARD"; expected "ALTER, ANALYZE"; SQL statement:
 ADDRESS SELECT * FROM CARD [42001-199]
+2019-11-21 21:41:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO ITEM (NAME, IMAGEURL, QUANTITY, TYPE, SUGARFREE, GLUTENFREE, DAIRYFREE, VEGETARIAN, PRICE, RATING) [*]"; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM, TABLE, VALUES"; SQL statement:
+insert into item (name, imageurl, quantity, type, sugarfree, glutenfree, dairyfree, vegetarian, price, rating) [42001-199]
+2019-11-21 21:43:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO ITEM (NAME, IMAGEURL, QUANTITY, TYPE, SUGARFREE, GLUTENFREE, DAIRYFREE, VEGETARIAN, PRICE, RATING) [*]"; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM, TABLE, VALUES"; SQL statement:
+insert into item (name, imageurl, quantity, type, sugarfree, glutenfree, dairyfree, vegetarian, price, rating) [42001-199]
