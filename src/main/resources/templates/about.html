@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Milkyway</title>
     <meta charset="utf-8">
@@ -23,8 +23,6 @@
   <body>
 
   <div class="site-wrap">
-
-
     <div class="site-navbar bg-white py-2">
 
       <div class="search-wrap">
@@ -40,25 +38,25 @@
         <div class="d-flex align-items-center justify-content-between">
           <div class="logo">
             <div class="site-logo">
-              <a href="index.html" class="js-logo-clone">Milkyway</a>
+              <a href="/home" class="js-logo-clone">Milkyway</a>
             </div>
           </div>
           <div class="main-nav d-none d-lg-block">
             <nav class="site-navigation text-right text-md-center" role="navigation">
               <ul class="site-menu js-clone-nav d-none d-lg-block">
                 <li>
-                  <a href="index.html">Home</a>
+                  <a href="/home">Home</a>
                 </li>
-                <li class><a href="shop.html">Shop</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class><a href="/shop">Shop</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact</a></li>
               </ul>
             </nav>
           </div>
           <div class="icons">
             <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
             <a href="#" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
-            <a href="cart.html" class="icons-btn d-inline-block bag">
+            <a href="/cart" class="icons-btn d-inline-block bag">
               <span class="icon-shopping-bag"></span>
               <span class="number">2</span>
             </a>
@@ -74,7 +72,7 @@
           <div class="col-md-6 ml-auto order-md-2 align-self-start">
             <div class="site-block-cover-content">
             <h1>Sweet cravings?</h1>
-            <p><a href="shop.html" class="btn btn-black rounded-0">Order Now</a></p>
+            <p><a href="/shop" class="btn btn-black rounded-0">Order Now</a></p>
             </div>
           </div>
           <div class="col-md-6 order-1 align-self-end">
@@ -87,7 +85,7 @@
     <div class="custom-border-bottom py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">About</strong></div>
+          <div class="col-md-12 mb-0"><a href="/home">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">About</strong></div>
         </div>
       </div>
     </div>
@@ -165,7 +163,7 @@
             <div class="block-38 text-center">
               <div class="block-38-img">
                 <div class="block-38-header">
-                  <img src="images/person_1.jpg" alt="Image placeholder" class="mb-4">
+                  <img src="images/puneet.jpg" alt="Image placeholder" class="mb-4">
                   <h3 class="block-38-heading h4">Puneet Pareenja</h3>
                   <p class="block-38-subheading">CEO/Co-Founder</p>
                 </div>
@@ -193,7 +191,7 @@
             <div class="block-38 text-center">
               <div class="block-38-img">
                 <div class="block-38-header">
-                  <img src="images/person_3.jpg" alt="Image placeholder" class="mb-4">
+                  <img src="images/navpreet.jpg" alt="Image placeholder" class="mb-4">
                   <h3 class="block-38-heading h4">Navpreet Kaur</h3>
                   <p class="block-38-subheading">Marketing</p>
                 </div>
@@ -207,7 +205,7 @@
             <div class="block-38 text-center">
               <div class="block-38-img">
                 <div class="block-38-header">
-                  <img src="images/person_4.jpg" alt="Image placeholder" class="mb-4">
+                  <img src="images/harry.jpg" alt="Image placeholder" class="mb-4">
                   <h3 class="block-38-heading h4">Harvinder Singh</h3>
                   <p class="block-38-subheading">Sales Manager</p>
                 </div>
@@ -250,14 +248,14 @@
               </div>
               <div class="col-md-6 col-lg-4">
                 <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="/about">About Us</a></li>
+                  <li><a href="/contact">Contact Us</a></li>
                   <li><a href="#">Our Partners</a></li>
                 </ul>
               </div>
               <div class="col-md-6 col-lg-4">
                 <ul class="list-unstyled">
-                  <li><a href="#"></a><b>Developers</b></li>
+                  <li><a href="/about"></a><b>Developers</b></li>
                   <li><a href="#">Puneet Pareenja</a></li>
                   <li><a href="#">Chhavi Kapur</a></li>
                   <li><a href="#">Navpreet Kaur</a></li>

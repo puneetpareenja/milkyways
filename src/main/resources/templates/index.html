@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Milkyway</title>
     <meta charset="utf-8">
@@ -37,18 +37,18 @@
             <div class="d-flex align-items-center justify-content-between">
                 <div class="logo">
                     <div class="site-logo">
-                        <a href="index.html" class="js-logo-clone">Milkyway</a>
+                        <a href="/home" class="js-logo-clone">Milkyway</a>
                     </div>
                 </div>
                 <div class="main-nav d-none d-lg-block">
                     <nav class="site-navigation text-right text-md-center" role="navigation">
                         <ul class="site-menu js-clone-nav d-none d-lg-block">
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="/home">Home</a>
                             </li>
-                            <li class><a href="shop.html">Shop</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li class><a href="/shop">Shop</a></li>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/contact">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -57,7 +57,7 @@
 
                 <div class="icons">
                     <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-                        <a href="cart.html" class="icons-btn d-inline-block bag">
+                        <a href="/cart" class="icons-btn d-inline-block bag">
                         <span class="icon-shopping-bag"></span>
                         <span class="number">2</span>
                     </a>
@@ -67,7 +67,7 @@
 
                 <nav class="site-navigation text-right text-md-center" role="navigation">
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
-                        <li class="has-children active">
+                        <li class="has-children">
                             <a href="#"><i class="fas fa-user-circle"></i> Account</a>
                             <ul class="dropdown">
                                 <li><a href="/signup"><i class="fas fa-user-plus"></i> Register</a></li>
@@ -105,18 +105,18 @@
             <div class="row align-items-stretch">
                 <div class="col-lg-8">
                     <div class="product-item sm-height full-height bg-gray">
-                        <a href="#" class="product-category">Sweet <span>50+ items</span></a>
+                        <a href="/shop" class="product-category">Sweet <span>50+ items</span></a>
                         <img src="images/pie.gif" alt="Image" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="product-item sm-height bg-gray mb-4">
-                        <a href="#" class="product-category">Baked <span>25+ items</span></a>
+                        <a href="/shop" class="product-category">Baked <span>25+ items</span></a>
                         <img src="images/scone.gif" alt="Image" class="img-fluid">
                     </div>
 
                     <div class="product-item sm-height bg-gray">
-                        <a href="#" class="product-category">Savoury <span>30 items</span></a>
+                        <a href="/shop" class="product-category">Savoury <span>30 items</span></a>
                         <img src="images/pizza.gif" alt="Image" class="img-fluid">
                     </div>
                 </div>
@@ -333,14 +333,14 @@
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <ul class="list-unstyled">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="/about">About Us</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
                                 <li><a href="#">Our Partners</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <ul class="list-unstyled">
-                                <li><a href="#"></a><b>Developers</b></li>
+                                <li><a href="/about"></a><b>Developers</b></li>
                                 <li><a href="#">Puneet Pareenja</a></li>
                                 <li><a href="#">Chhavi Kapur</a></li>
                                 <li><a href="#">Navpreet Kaur</a></li>
