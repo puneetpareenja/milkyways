@@ -11,10 +11,13 @@ public class Item {
     private String imageurl;
     private int quantity;
     private boolean type; //0: sweet, 1: savoury
-    private boolean sugarfree;
-    private boolean glutenfree;
-    private boolean vegetarian;
+    private boolean sugarfree; //0: w/ sugar, 1: sugarfree
+    private boolean glutenfree; //0: not, 1: glutenfree
+    private boolean dairyfree; //0: not, 1: dairyfree
+    private boolean vegetarian; //0: not, 1: vegetarian
     private float price;
+    private int rating; //1 to 5 stars
+    private String bakery;
 
     @ManyToOne
     @JoinColumn(name = "storeid")
