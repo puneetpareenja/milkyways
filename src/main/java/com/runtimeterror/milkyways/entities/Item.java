@@ -18,112 +18,135 @@ public class Item {
     private float price;
     private int rating; //1 to 5 stars
 
-    @ManyToOne
-    @JoinColumn(name = "storeid")
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Store store;
 
     public Item() {
-    }
-
-    public Item(String name, String imageurl, int quantity, boolean type, boolean sugarfree, boolean glutenfree, boolean dairyfree, boolean vegetarian, float price, int rating,  Store store) {
-        this.name = name;
-        this.imageurl = imageurl;
-        this.quantity = quantity;
-        this.type = type;
-        this.sugarfree = sugarfree;
-        this.glutenfree = glutenfree;
-        this.dairyfree = dairyfree;
-        this.vegetarian = vegetarian;
-        this.price = price;
-        this.rating = rating;
-        this.store = store;
     }
 
     public long getItemid() {
         return itemid;
     }
 
-    public void setItemid(long itemid) {
+    public Item setItemid(long itemid) {
         this.itemid = itemid;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public Item setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getImageurl() {
         return imageurl;
     }
 
-    public void setImageurl(String imageurl) {
+    public Item setImageurl(String imageurl) {
         this.imageurl = imageurl;
+        return this;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public Item setQuantity(int quantity) {
         this.quantity = quantity;
+        return this;
     }
 
     public boolean isType() {
         return type;
     }
 
-    public void setType(boolean type) {
+    public Item setType(boolean type) {
         this.type = type;
+        return this;
     }
 
     public boolean isSugarfree() {
         return sugarfree;
     }
 
-    public void setSugarfree(boolean sugarfree) {
+    public Item setSugarfree(boolean sugarfree) {
         this.sugarfree = sugarfree;
+        return this;
     }
 
     public boolean isGlutenfree() {
         return glutenfree;
     }
 
-    public void setGlutenfree(boolean glutenfree) {
+    public Item setGlutenfree(boolean glutenfree) {
         this.glutenfree = glutenfree;
+        return this;
+    }
+
+    public boolean isDairyfree() {
+        return dairyfree;
+    }
+
+    public Item setDairyfree(boolean dairyfree) {
+        this.dairyfree = dairyfree;
+        return this;
     }
 
     public boolean isVegetarian() {
         return vegetarian;
     }
 
-    public void setVegetarian(boolean vegetarian) {
+    public Item setVegetarian(boolean vegetarian) {
         this.vegetarian = vegetarian;
+        return this;
     }
 
     public float getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public Item setPrice(float price) {
         this.price = price;
+        return this;
     }
 
-    public boolean isDairyfree() { return dairyfree; }
+    public int getRating() {
+        return rating;
+    }
 
-    public int getRating() { return rating; }
-
-    public void setDairyfree(boolean dairyfree) { this.dairyfree = dairyfree; }
-
-    public void setRating(int rating) { this.rating = rating; }
+    public Item setRating(int rating) {
+        this.rating = rating;
+        return this;
+    }
 
     public Store getStore() {
         return store;
     }
 
-    public void setStore(Store store) {
+    public Item setStore(Store store) {
         this.store = store;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "itemid=" + itemid +
+                ", name='" + name + '\'' +
+                ", imageurl='" + imageurl + '\'' +
+                ", quantity=" + quantity +
+                ", type=" + type +
+                ", sugarfree=" + sugarfree +
+                ", glutenfree=" + glutenfree +
+                ", dairyfree=" + dairyfree +
+                ", vegetarian=" + vegetarian +
+                ", price=" + price +
+                ", rating=" + rating +
+                ", store=" + store +
+                '}';
     }
 }

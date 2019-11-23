@@ -12,14 +12,12 @@ public class Sales {
     private long salesid;
 
     @OneToOne
-    @JoinColumn(name = "customerid")
     private Customer customer;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
 
     @OneToMany
-    @JoinColumn(name ="itemid")
     private List<Item> itemlist = new ArrayList<>();
 
     private double total;
@@ -72,5 +70,16 @@ public class Sales {
 
     public void setTotal(double total) {
         this.total = total;
+    }
+
+    @Override
+    public String toString() {
+        return "Sales{" +
+                "salesid=" + salesid +
+                ", customer=" + customer +
+                ", date=" + date +
+                ", itemlist=" + itemlist +
+                ", total=" + total +
+                '}';
     }
 }

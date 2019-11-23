@@ -12,61 +12,59 @@ public class Store {
     private String storename;
     private String phone;
 
-    @OneToOne
-    @JoinColumn(name="addressid")
-    private Address address;
+    @OneToOne(mappedBy = "store", fetch = FetchType.EAGER)
+    private StoreAddress storeAddress;
 
-    @OneToMany(mappedBy = "store",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "store", fetch = FetchType.EAGER)
     private List<Item> itemlist = new ArrayList<>();
 
     public Store() {
-    }
-
-    public Store(String storename, String phone, Address address, List<Item> itemlist) {
-        this.storename = storename;
-        this.phone = phone;
-        this.address = address;
-        this.itemlist = itemlist;
     }
 
     public long getStoreid() {
         return storeid;
     }
 
-    public void setStoreid(long storeid) {
+    public Store setStoreid(long storeid) {
         this.storeid = storeid;
+        return this;
     }
 
     public String getStorename() {
         return storename;
     }
 
-    public void setStorename(String storename) {
+    public Store setStorename(String storename) {
         this.storename = storename;
+        return this;
     }
 
     public String getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public Store setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
+        return this;
     }
 
     public List<Item> getItemlist() {
         return itemlist;
     }
 
-    public void setItemlist(List<Item> itemlist) {
+    public Store setItemlist(List<Item> itemlist) {
         this.itemlist = itemlist;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Store{" +
+                "storeid=" + storeid +
+                ", storename='" + storename + '\'' +
+                ", phone='" + phone + '\'' +
+                ", itemlist=" + itemlist +
+                '}';
     }
 }
 

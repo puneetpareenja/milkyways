@@ -1,6 +1,6 @@
 # Welcome Milkyways wiki
 Milkyway, an online dessert ordering platform that lets customers browse a wide-selection of Vancouver based bakeries while providing broad search categorisation and delivery services. Baked goods include but are not limited to customised cakes, pastries, cupcakes, donuts, pies and croissants.
-Our website would allow the user to browse through multiple online stores available on the platform, look up various items offered at those stores and then order the desired items to their chosen address at their chosen time.
+Our website would allow the user to browse through multiple online stores available on the platform, look up various items offered at those stores and then order the desired items to their chosen customerAddress at their chosen time.
 
 # How to import the project
 ## Importing project in Eclipse or Spring Tool Suite

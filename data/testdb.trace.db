@@ -31,3 +31,101 @@ insert into item (name, imageurl, quantity, type, sugarfree, glutenfree, dairyfr
 2019-11-21 21:43:22 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO ITEM (NAME, IMAGEURL, QUANTITY, TYPE, SUGARFREE, GLUTENFREE, DAIRYFREE, VEGETARIAN, PRICE, RATING) [*]"; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM, TABLE, VALUES"; SQL statement:
 insert into item (name, imageurl, quantity, type, sugarfree, glutenfree, dairyfree, vegetarian, price, rating) [42001-199]
+2019-11-23 02:21:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT [*]"; expected "TOP, LIMIT, DISTINCT, ALL, *, NOT, EXISTS, INTERSECTS"; SQL statement:
+show all tables [42001-199]
+2019-11-23 02:23:16 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP CUSTOMER_ADDRESSLIST[*] "; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE, SYNONYM"; SQL statement:
+drop customer_addresslist [42001-199]
+2019-11-23 03:12:47 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM CARD CONTACT CUSTOMER[*] CUSTOMER_ADDRESS ITEM SALES"; SQL statement:
+SELECT * FROM CARD CONTACT CUSTOMER CUSTOMER_ADDRESS ITEM SALES [42000-199]
+2019-11-23 03:15:09 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO ITEM ( DAIRYFREE , GLUTENFREE , IMAGEURL , NAME , PRICE , QUANTITY , RATING , STORE_STOREID , SUGARFREE , TYPE , VEGETARIAN ) VALUES [*]"; expected "ROW, (, DEFAULT, NOT, EXISTS, INTERSECTS"; SQL statement:
+insert into item ( dairyfree , glutenfree , imageurl , name , price , quantity , rating , store_storeid , sugarfree , type , vegetarian ) values [42001-199]
+2019-11-23 03:16:52 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "Mama's Little Bakery" not found; SQL statement:
+insert into store ( storename , phone ) values ( "Mama's Little Bakery", 9876543210) [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:176)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:158)
+	at org.h2.command.dml.Insert.prepare(Insert.java:322)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:1113)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1436)
+	at org.h2.server.web.WebApp.query(WebApp.java:1111)
+	at org.h2.server.web.WebApp.query(WebApp.java:1087)
+	at org.h2.server.web.WebApp.process(WebApp.java:237)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:121)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:158)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+2019-11-23 03:17:35 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into store ( storename , phone ) values Mama[*]'s Little Bakery, 9876543210"; SQL statement:
+insert into store ( storename , phone ) values Mama's Little Bakery, 9876543210 [42000-199]
+2019-11-23 03:17:42 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO STORE ( STORENAME , PHONE ) VALUES MAMAS LITTLE[*] BAKERY, 9876543210 "; SQL statement:
+insert into store ( storename , phone ) values Mamas Little Bakery, 9876543210 [42000-199]
+2019-11-23 03:17:59 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO STORE ( STORENAME , PHONE ) VALUES [[*]MAMAS LITTLE BAKERY, 9876543210] "; expected "ROW, (, DEFAULT, NOT, EXISTS, INTERSECTS"; SQL statement:
+insert into store ( storename , phone ) values [Mamas Little Bakery, 9876543210] [42001-199]
+2019-11-23 03:18:57 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into store ( storename , phone ) value ([*]'Mamas Little Bakery, 9876543210);"; SQL statement:
+insert into store ( storename , phone ) value ('Mamas Little Bakery, 9876543210); [42000-199]
+2019-11-23 03:20:05 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into store ( storename , phone ) values ([*]'Mamas Little Bakery, 9876543210);"; SQL statement:
+insert into store ( storename , phone ) values ('Mamas Little Bakery, 9876543210); [42000-199]
+2019-11-23 03:21:18 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into store values (1, [*]'Mamas Little Bakery, 9876543210)"; SQL statement:
+insert into store values (1, 'Mamas Little Bakery, 9876543210) [42000-199]
+2019-11-23 03:21:33 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into store values ( 'Mamas Little Bakery, '9876543210[*]')"; SQL statement:
+insert into store values ( 'Mamas Little Bakery, '9876543210') [42000-199]
+2019-11-23 03:21:52 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into store ( storename , phone ) values ('Mamas Little Bakery, '9876543210[*]')"; SQL statement:
+insert into store ( storename , phone ) values ('Mamas Little Bakery, '9876543210') [42000-199]

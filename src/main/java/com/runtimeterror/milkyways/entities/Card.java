@@ -1,8 +1,5 @@
 package com.runtimeterror.milkyways.entities;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -14,59 +11,65 @@ public class Card {
     private Date expirydate;
     private int cvv;
     private String cardholder;
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "customerid")
-    @OnDelete(action = OnDeleteAction.CASCADE)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Customer customer;
 
     public Card() {
-    }
-
-    public Card(long number, Date expirydate, int cvv, String cardholder, Customer customer) {
-        this.number = number;
-        this.expirydate = expirydate;
-        this.cvv = cvv;
-        this.cardholder = cardholder;
-        this.customer = customer;
     }
 
     public Customer getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public Card setCustomer(Customer customer) {
         this.customer = customer;
+        return this;
     }
 
     public long getNumber() {
         return number;
     }
 
-    public void setNumber(long number) {
+    public Card setNumber(long number) {
         this.number = number;
+        return this;
     }
 
     public Date getExpirydate() {
         return expirydate;
     }
 
-    public void setExpirydate(Date expirydate) {
+    public Card setExpirydate(Date expirydate) {
         this.expirydate = expirydate;
+        return this;
     }
 
     public int getCvv() {
         return cvv;
     }
 
-    public void setCvv(int cvv) {
+    public Card setCvv(int cvv) {
         this.cvv = cvv;
+        return this;
     }
 
     public String getCardholder() {
         return cardholder;
     }
 
-    public void setCardholder(String cardholder) {
+    public Card setCardholder(String cardholder) {
         this.cardholder = cardholder;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "number=" + number +
+                ", expirydate=" + expirydate +
+                ", cvv=" + cvv +
+                ", cardholder='" + cardholder + '\'' +
+                ", customer=" + customer +
+                '}';
     }
 }
