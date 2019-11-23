@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.ConstraintViolationException;
+import javax.validation.Valid;
 
 @Controller
 public class LoginController {
@@ -18,36 +19,55 @@ public class LoginController {
 
     @GetMapping("/signup")
     public ModelAndView addCustomer(Customer customer) {
-        ModelAndView modelAndView = new ModelAndView("signup.html");
-        try {
-            customerRepository.save(customer);
-            modelAndView.addObject("customer", customer);
-        } catch (ConstraintViolationException ignored) {
-
-        } finally {
-            return modelAndView;
+        if (customer.getEmail() == null) {
+            System.out.println("customer info not provided");
+            return new ModelAndView("signup.html");
         }
+        System.out.println("Saving customer with information \n" + customer);
+        customerRepository.save(customer);
+        System.out.println("Customer Saved. Redirecting to home.");
+        return new ModelAndView("redirect:/");
     }
-
 
     @GetMapping("/signin")
     public ModelAndView redirectToSignIn(
             @RequestParam(name = "email", defaultValue = "") String email,
             @RequestParam(name = "password", defaultValue = "") String password) {
-        ModelAndView modelAndView = new ModelAndView("signin.html");
+        ModelAndView modelAndView;
 
-        if (!email.equals("") || !password.equals("")) {
-            boolean isValid = validateUser(email, password);
-            modelAndView.addObject("isvalid", isValid);
+        System.out.println("email " + email);
+        System.out.println("password " + password);
+
+        if (email.equals("") && password.equals("")) {
+            System.out.println("Credentials not provided");
+            modelAndView = new ModelAndView("signin.html");
+            modelAndView.addObject("errorMessage", "");
+
+        } else {
+            if (validateUser(email, password)) {
+                System.out.println("Login Successful");
+                modelAndView = new ModelAndView("redirect:/");
+            } else {
+                System.out.println("Login Failed");
+                modelAndView = new ModelAndView("signin.html");
+                modelAndView.addObject("errorMessage", "Invalid Username or password");
+            }
         }
-
         return modelAndView;
     }
 
-
     private boolean validateUser(String email, String password) {
+        System.out.println("Validation user");
+        System.out.println("Getting customer by email " + email);
         Customer customer = customerRepository.findByEmail(email);
-        return customer.getPassword().equals(password);
+        try {
+            System.out.println("Customer returned \n" +customer);
+            return password.equals(customer.getPassword());
+        } catch (Exception e) {
+            System.out.println("Exception Caught");
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
 
 
