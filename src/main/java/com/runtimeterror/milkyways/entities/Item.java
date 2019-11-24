@@ -17,6 +17,7 @@ public class Item {
     private boolean vegetarian; //0: not, 1: vegetarian
     private float price;
     private int rating; //1 to 5 stars
+    private String description;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Store store;
@@ -129,6 +130,15 @@ public class Item {
 
     public Item setStore(Store store) {
         this.store = store;
+        return this;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Item setDescription(String description) {
+        this.description = description;
         return this;
     }
 

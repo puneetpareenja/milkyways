@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.validation.ConstraintViolationException;
-import javax.validation.Valid;
-
 @Controller
 public class LoginController {
 
@@ -19,14 +16,18 @@ public class LoginController {
 
     @GetMapping("/signup")
     public ModelAndView addCustomer(Customer customer) {
+        ModelAndView modelAndView;
         if (customer.getEmail() == null) {
             System.out.println("customer info not provided");
-            return new ModelAndView("signup.html");
+            modelAndView = new ModelAndView("signup.html");
+        } else {
+            System.out.println("Saving customer with information \n" + customer);
+            customerRepository.save(customer);
+            System.out.println("Customer Saved. Redirecting to home.");
+            modelAndView = new ModelAndView("redirect:/");
+            modelAndView.addObject("customer", customer);
         }
-        System.out.println("Saving customer with information \n" + customer);
-        customerRepository.save(customer);
-        System.out.println("Customer Saved. Redirecting to home.");
-        return new ModelAndView("redirect:/");
+        return modelAndView;
     }
 
     @GetMapping("/signin")
@@ -47,6 +48,8 @@ public class LoginController {
             if (validateUser(email, password)) {
                 System.out.println("Login Successful");
                 modelAndView = new ModelAndView("redirect:/");
+                Customer customer = customerRepository.findByEmail(email);
+                modelAndView.addObject("customer", customer);
             } else {
                 System.out.println("Login Failed");
                 modelAndView = new ModelAndView("signin.html");
@@ -61,7 +64,7 @@ public class LoginController {
         System.out.println("Getting customer by email " + email);
         Customer customer = customerRepository.findByEmail(email);
         try {
-            System.out.println("Customer returned \n" +customer);
+            System.out.println("Customer returned \n" + customer);
             return password.equals(customer.getPassword());
         } catch (Exception e) {
             System.out.println("Exception Caught");
