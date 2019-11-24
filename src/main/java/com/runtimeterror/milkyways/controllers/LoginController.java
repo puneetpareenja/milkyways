@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class LoginController {
 
@@ -15,7 +17,7 @@ public class LoginController {
     CustomerRepository customerRepository;
 
     @GetMapping("/signup")
-    public ModelAndView addCustomer(Customer customer) {
+    public ModelAndView addCustomer(Customer customer, HttpSession session) {
         ModelAndView modelAndView;
         if (customer.getEmail() == null) {
             System.out.println("customer info not provided");
@@ -23,7 +25,9 @@ public class LoginController {
         } else {
             System.out.println("Saving customer with information \n" + customer);
             customerRepository.save(customer);
+            customer = customerRepository.findByEmail(customer.getEmail());
             System.out.println("Customer Saved. Redirecting to home.");
+            session.setAttribute("customer", customer);
             modelAndView = new ModelAndView("redirect:/");
             modelAndView.addObject("customer", customer);
         }
@@ -33,7 +37,8 @@ public class LoginController {
     @GetMapping("/signin")
     public ModelAndView redirectToSignIn(
             @RequestParam(name = "email", defaultValue = "") String email,
-            @RequestParam(name = "password", defaultValue = "") String password) {
+            @RequestParam(name = "password", defaultValue = "") String password,
+            HttpSession session) {
         ModelAndView modelAndView;
 
         System.out.println("email " + email);
@@ -49,6 +54,7 @@ public class LoginController {
                 System.out.println("Login Successful");
                 modelAndView = new ModelAndView("redirect:/");
                 Customer customer = customerRepository.findByEmail(email);
+                session.setAttribute("customer", customer);
                 modelAndView.addObject("customer", customer);
             } else {
                 System.out.println("Login Failed");
