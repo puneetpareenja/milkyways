@@ -7,8 +7,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class RoutingController {
 
-
-
     @GetMapping("/about")
     public ModelAndView redirectToAbout() {
         ModelAndView modelAndView = new ModelAndView("about.html");
@@ -29,16 +27,11 @@ public class RoutingController {
         return modelAndView;
     }
 
-
-
     @GetMapping("/error")
     public ModelAndView redirectToError() {
         ModelAndView modelAndView = new ModelAndView("error.html");
 
         return modelAndView;
     }
-
-
-
 
 }

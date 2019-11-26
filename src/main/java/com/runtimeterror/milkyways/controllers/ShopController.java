@@ -5,7 +5,7 @@ import com.runtimeterror.milkyways.repositories.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -33,6 +33,16 @@ public class ShopController {
             return redirectToShop();
         }
         modelAndView.addObject(item);
+        return modelAndView;
+    }
+
+    @RequestMapping("/search")
+    public ModelAndView searchItem(@RequestParam(defaultValue = "") String text) {
+        System.out.println(text);
+
+        ModelAndView modelAndView = new ModelAndView("shop.html");
+        List<Item> itemlist = itemRepository.findAllByNameContainingIgnoreCase(text);
+        modelAndView.addObject("items", itemlist);
         return modelAndView;
     }
 }
