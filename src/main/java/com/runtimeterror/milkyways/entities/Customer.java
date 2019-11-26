@@ -1,6 +1,8 @@
 package com.runtimeterror.milkyways.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Customer {
@@ -18,7 +20,11 @@ public class Customer {
     @OneToOne(mappedBy = "customer", fetch = FetchType.EAGER)
     private Card card;
 
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Item> cart = new ArrayList<>();
+
     public Customer() {
+
     }
 
     public long getCustomerid() {
@@ -90,6 +96,15 @@ public class Customer {
 
     public Customer setCard(Card card) {
         this.card = card;
+        return this;
+    }
+
+    public List<Item> getCart() {
+        return cart;
+    }
+
+    public Customer setCart(List<Item> cart) {
+        this.cart = cart;
         return this;
     }
 

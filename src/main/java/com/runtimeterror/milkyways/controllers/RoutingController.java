@@ -21,12 +21,6 @@ public class RoutingController {
         return modelAndView;
     }
 
-    @GetMapping("/shop")
-    public ModelAndView redirectToShop() {
-        ModelAndView modelAndView = new ModelAndView("shop.html");
-
-        return modelAndView;
-    }
 
     @GetMapping("/thankyou")
     public ModelAndView redirectToThankyou() {
@@ -42,12 +36,7 @@ public class RoutingController {
         return modelAndView;
     }
 
-    @GetMapping("/shop-single")
-    public ModelAndView redirectToShopSingle() {
-        ModelAndView modelAndView = new ModelAndView("shop-single.html");
 
-        return modelAndView;
-    }
 
     @GetMapping("/error")
     public ModelAndView redirectToError() {
@@ -56,12 +45,12 @@ public class RoutingController {
         return modelAndView;
     }
 
-    @GetMapping("/home")
-    public ModelAndView redirectToHome() {
-        ModelAndView modelAndView = new ModelAndView("index.html");
-
-        return modelAndView;
-    }
+//    @GetMapping("/home")
+//    public ModelAndView redirectToHome() {
+//        ModelAndView modelAndView = new ModelAndView("index.html");
+//
+//        return modelAndView;
+//    }
 
     @GetMapping("/cart")
     public ModelAndView redirectToCart() {
