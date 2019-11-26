@@ -7,17 +7,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class RoutingController {
 
-    @GetMapping("/checkout")
-    public ModelAndView redirectToCheckout() {
-        ModelAndView modelAndView = new ModelAndView("checkout.html");
 
-        return modelAndView;
-    }
 
     @GetMapping("/about")
     public ModelAndView redirectToAbout() {
         ModelAndView modelAndView = new ModelAndView("about.html");
-
         return modelAndView;
     }
 
@@ -32,7 +26,6 @@ public class RoutingController {
     @GetMapping("/contact")
     public ModelAndView redirectToContact() {
         ModelAndView modelAndView = new ModelAndView("contact.html");
-
         return modelAndView;
     }
 
@@ -45,18 +38,7 @@ public class RoutingController {
         return modelAndView;
     }
 
-//    @GetMapping("/home")
-//    public ModelAndView redirectToHome() {
-//        ModelAndView modelAndView = new ModelAndView("index.html");
-//
-//        return modelAndView;
-//    }
 
-    @GetMapping("/cart")
-    public ModelAndView redirectToCart() {
-        ModelAndView modelAndView = new ModelAndView("cart.html");
 
-        return modelAndView;
-    }
 
 }
