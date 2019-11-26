@@ -436,3 +436,24 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/puneet
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:390)
 	... 62 more
+2019-11-25 15:34:30 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "STORE[*] SELECT * FROM STORE"; expected "SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW"; SQL statement:
+STORE SELECT * FROM STORE [42001-199]
+2019-11-25 15:41:36 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO STORE VALUES (8, '(778) 979-4889', [*]'Milkyway Inc.);"; SQL statement:
+INSERT INTO STORE VALUES (8, '(778) 979-4889', 'Milkyway Inc.); [42000-199]
+2019-11-25 15:46:59 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into item (itemid, name, description, imageurl, quantity, type, sugarfree, glutenfree, dairyfree, vegetarian, price, rating, store_storeid)
+values (1, 'Birthday letter donuts', 'For your loved ones, an untraditional alternative to cake. 13 letter donuts spelling out H.A.P.P.Y B.I.R.T.H.D.A.Y. Available in flavors of your choice including chocolate, vanilla bean, birthday cake and maple., 'birthday-donuts.jpg[*]', 9, true, false, false , false, false , 90.00, 5);"; SQL statement:
+insert into item (itemid, name, description, imageurl, quantity, type, sugarfree, glutenfree, dairyfree, vegetarian, price, rating, store_storeid)
+values (1, 'Birthday letter donuts', 'For your loved ones, an untraditional alternative to cake. 13 letter donuts spelling out H.A.P.P.Y B.I.R.T.H.D.A.Y. Available in flavors of your choice including chocolate, vanilla bean, birthday cake and maple., 'birthday-donuts.jpg', 9, true, false, false , false, false , 90.00, 5); [42000-199]
+2019-11-25 15:47:23 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into item (itemid, name, description, imageurl, quantity, type, sugarfree, glutenfree, dairyfree, vegetarian, price, rating, store_storeid)
+values (1, 'Birthday letter donuts', 'For your loved ones, an untraditional alternative to cake. 13 letter donuts spelling out H.A.P.P.Y B.I.R.T.H.D.A.Y. Available in flavors of your choice including chocolate, vanilla bean, birthday cake and maple., 'birthday-donuts.jpg[*]', 9, true, false, false , false, false , 90.00, 5, 2);"; SQL statement:
+insert into item (itemid, name, description, imageurl, quantity, type, sugarfree, glutenfree, dairyfree, vegetarian, price, rating, store_storeid)
+values (1, 'Birthday letter donuts', 'For your loved ones, an untraditional alternative to cake. 13 letter donuts spelling out H.A.P.P.Y B.I.R.T.H.D.A.Y. Available in flavors of your choice including chocolate, vanilla bean, birthday cake and maple., 'birthday-donuts.jpg', 9, true, false, false , false, false , 90.00, 5, 2); [42000-199]
+2019-11-25 15:47:31 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into item (itemid, name, description, imageurl, quantity, type, sugarfree, glutenfree, dairyfree, vegetarian, price, rating, store_storeid)
+values (1, 'Birthday letter donuts', 'For your loved ones, an untraditional alternative to cake. 13 letter donuts spelling out H.A.P.P.Y B.I.R.T.H.D.A.Y. Available in flavors of your choice including chocolate, vanilla bean, birthday cake and maple., 'birthday-donuts.jpg[*]', 9, true, false, false , false, false , 90.00, 5, 2)"; SQL statement:
+insert into item (itemid, name, description, imageurl, quantity, type, sugarfree, glutenfree, dairyfree, vegetarian, price, rating, store_storeid)
+values (1, 'Birthday letter donuts', 'For your loved ones, an untraditional alternative to cake. 13 letter donuts spelling out H.A.P.P.Y B.I.R.T.H.D.A.Y. Available in flavors of your choice including chocolate, vanilla bean, birthday cake and maple., 'birthday-donuts.jpg', 9, true, false, false , false, false , 90.00, 5, 2) [42000-199]
