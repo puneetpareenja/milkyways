@@ -131,68 +131,35 @@
                     <div class="border p-4 rounded mb-4">
 
                         <div class="mb-4">
-                            <h3 class="mb-3 h6 text-uppercase text-black d-block">Bakeries</h3>
+                            <h3 class="mb-3 h6 text-uppercase text-primary d-block">Bakeries</h3>
 
                             <!--/*@thymesVar id="stores" type="List<Store>"*/-->
                             <!--/*@thymesVar id="store" type="com.runtimeterror.milkyways.entities.Store"*/-->
                             <th:block th:each="store: ${stores}">
-                                <label th:for="${store.getStoreid()}" class="d-flex">
-                                    <input type="checkbox" th:id="${store.getStoreid()}" th:name="${store.getStoreid()}"
-                                           class="mr-2 mt-1">
-                                    <span class="text-black" th:text="${store.getStorename()}">Purebread</span>
-                                </label>
+<!--                                <label th:for="${store.getStoreid()}" class="d-flex">-->
+<!--                                    <input type="checkbox" th:id="${store.getStoreid()}" th:name="${store.getStoreid()}"-->
+<!--                                           class="mr-2 mt-1">-->
+<!--                                    <span class="text-black" th:text="${store.getStorename()}">Purebread</span>-->
+<!--                                </label>-->
+
+                                <a href="/shop" th:for="${store.getStoreid()}" class="d-flex color-item align-items-center">
+                                    <span class="text-black" th:id="${store.getStoreid()}" th:name="${store.getStoreid()}" th:text="${store.getStorename()}">Sweet</span>
+                                </a>
                             </th:block>
-
-
-                            <!--                            <label for="s_md" class="d-flex">&ndash;&gt;-->
-                            <!--                                <input type="checkbox" id="bake1" class="mr-2 mt-1"> <span-->
-                            <!--                                    class="text-black">Purebread</span>-->
-                            <!--                            </label>-->
-                            <!--                            <label for="s_md" class="d-flex">-->
-                            <!--                                <input type="checkbox" id="bake2" class="mr-2 mt-1"> <span-->
-                            <!--                                    class="text-black">Cartem Donuts</span>-->
-                            <!--                            </label>-->
-                            <!--                            <label for="s_md" class="d-flex">-->
-                            <!--                                <input type="checkbox" id="bake3" class="mr-2 mt-1"> <span-->
-                            <!--                                    class="text-black">Thierry</span>-->
-                            <!--                            </label>-->
-                            <!--                            <label for="s_md" class="d-flex">-->
-                            <!--                                <input type="checkbox" id="bake4" class="mr-2 mt-1"> <span-->
-                            <!--                                    class="text-black">Small Victory Bakery</span>-->
-                            <!--                            </label>-->
-                            <!--                            <label for="s_md" class="d-flex">-->
-                            <!--                                <input type="checkbox" id="bake5" class="mr-2 mt-1"> <span-->
-                            <!--                                    class="text-black">Beaucoup Bakery</span>-->
-                            <!--                            </label>-->
-                            <!--                            <label for="s_md" class="d-flex">-->
-                            <!--                                <input type="checkbox" id="bake6" class="mr-2 mt-1"> <span-->
-                            <!--                                    class="text-black">True Confections</span>-->
-                            <!--                            </label>-->
-                            <!--                            <label for="s_md" class="d-flex">-->
-                            <!--                                <input type="checkbox" id="bake7" class="mr-2 mt-1"> <span-->
-                            <!--                                    class="text-black">Cadeaux Bakery</span>-->
-                            <!--                            </label>-->
-                            <!--                            <label for="s_md" class="d-flex">-->
-                            <!--                                <input type="checkbox" id="bake8" class="mr-2 mt-1"> <span-->
-                            <!--                                    class="text-black">Milkyway Inc.</span>-->
-                            <!--                            </label>-->
-
                         </div>
 
                         <div class="mb-4">
-                            <h3 class="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
-                            <a href="/shop?type=true" class="d-flex color-item align-items-center">
-                                <span class="color d-inline-block rounded-circle mr-2"></span> <span
-                                    class="text-black">Sweet</span>
+                            <h3 class="mb-3 h6 text-uppercase text-primary d-block">Categories</h3>
+                            <a href="/shop?type=1" class="d-flex color-item align-items-center">
+                                <span class="text-black">Sweet</span>
                             </a>
-                            <a href="/shop?type=false" class="d-flex color-item align-items-center">
-                                <span class="color d-inline-block rounded-circle mr-2"></span> <span
-                                    class="text-black">Savoury</span>
+                            <a href="/shop?type=0" class="d-flex color-item align-items-center">
+                                <span class="text-black">Savoury</span>
                             </a>
                         </div>
 
                         <div class="mb-4">
-                            <h3 class="mb-3 h6 text-uppercase text-black d-block">Type</h3>
+                            <h3 class="mb-3 h6 text-uppercase text-primary d-block">Type</h3>
                             <a href="/shop?glutenfree=true" class="d-flex color-item align-items-center">
                                 <span class="bg-secondary color d-inline-block rounded-circle mr-2"></span> <span
                                     class="text-black">Gluten-free</span>

@@ -28,7 +28,8 @@ public class ShopController {
             @RequestParam(defaultValue = "false", required = false) boolean sugarfree,
             @RequestParam(defaultValue = "false", required = false) boolean dairyfree,
             @RequestParam(defaultValue = "false", required = false) boolean vegetarian,
-            @RequestParam(required = false) boolean type
+            @RequestParam(defaultValue = "-1", required = false) int type
+
     ) {
 
         ModelAndView modelAndView = new ModelAndView("shop.html");
@@ -41,9 +42,9 @@ public class ShopController {
             itemlist = itemRepository.findAllByDairyfreeIs(true);
         } else if (vegetarian) {
             itemlist = itemRepository.findAllByVegetarianIs(true);
-        } else if (type) {
+        } else if (type == 1) {
             itemlist = itemRepository.findAllByTypeIs(true);
-        } else if (type) {
+        } else if (type == 0) {
             itemlist = itemRepository.findAllByTypeIs(false);
         } else {
             itemlist = (List<Item>) itemRepository.findAll();

@@ -5,6 +5,7 @@ import com.runtimeterror.milkyways.entities.Item;
 
 import java.util.List;
 
+import com.runtimeterror.milkyways.entities.Store;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ItemRepository extends CrudRepository<Item, Long> {
