@@ -18,6 +18,9 @@ public class HomeController {
     @RequestMapping(value = {"", "/", "/home", "welcome"})
     public ModelAndView initHome(HttpSession session) {
         Customer customer = (Customer) session.getAttribute("customer");
+        if (customer == null) {
+            customer = new Customer();
+        }
 
         ModelAndView modelAndView = new ModelAndView("index.html");
         modelAndView.addObject("customer", customer);

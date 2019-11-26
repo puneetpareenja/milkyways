@@ -1,7 +1,9 @@
 package com.runtimeterror.milkyways.controllers;
 
 import com.runtimeterror.milkyways.entities.Item;
+import com.runtimeterror.milkyways.entities.Store;
 import com.runtimeterror.milkyways.repositories.ItemRepository;
+import com.runtimeterror.milkyways.repositories.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,11 +19,16 @@ public class ShopController {
     @Autowired
     ItemRepository itemRepository;
 
+    @Autowired
+    StoreRepository storeRepository;
+
     @GetMapping("/shop")
     public ModelAndView redirectToShop() {
         ModelAndView modelAndView = new ModelAndView("shop.html");
         List<Item> itemlist = (List<Item>) itemRepository.findAll();
+        List<Store> storelist = (List<Store>) storeRepository.findAll();
         modelAndView.addObject("items", itemlist);
+        modelAndView.addObject("stores", storelist);
         return modelAndView;
     }
 

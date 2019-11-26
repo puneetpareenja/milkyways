@@ -132,38 +132,49 @@
 
                         <div class="mb-4">
                             <h3 class="mb-3 h6 text-uppercase text-black d-block">Bakeries</h3>
-                            <label for="s_sm" class="d-flex">
-                                <input type="checkbox" id="bake1" class="mr-2 mt-1"> <span
-                                    class="text-black">Purebread</span>
-                            </label>
-                            <label for="s_md" class="d-flex">
-                                <input type="checkbox" id="bake2" class="mr-2 mt-1"> <span
-                                    class="text-black">Cartem Donuts</span>
-                            </label>
-                            <label for="s_md" class="d-flex">
-                                <input type="checkbox" id="bake3" class="mr-2 mt-1"> <span
-                                    class="text-black">Thierry</span>
-                            </label>
-                            <label for="s_md" class="d-flex">
-                                <input type="checkbox" id="bake4" class="mr-2 mt-1"> <span
-                                    class="text-black">Small Victory Bakery</span>
-                            </label>
-                            <label for="s_md" class="d-flex">
-                                <input type="checkbox" id="bake5" class="mr-2 mt-1"> <span
-                                    class="text-black">Beaucoup Bakery</span>
-                            </label>
-                            <label for="s_md" class="d-flex">
-                                <input type="checkbox" id="bake6" class="mr-2 mt-1"> <span
-                                    class="text-black">True Confections</span>
-                            </label>
-                            <label for="s_md" class="d-flex">
-                                <input type="checkbox" id="bake7" class="mr-2 mt-1"> <span
-                                    class="text-black">Cadeaux Bakery</span>
-                            </label>
-                            <label for="s_md" class="d-flex">
-                                <input type="checkbox" id="bake8" class="mr-2 mt-1"> <span
-                                    class="text-black">Milkyway Inc.</span>
-                            </label>
+
+                            <!--/*@thymesVar id="stores" type="List<Store>"*/-->
+                            <!--/*@thymesVar id="store" type="com.runtimeterror.milkyways.entities.Store"*/-->
+                            <th:block th:each="store: ${stores}">
+                                <label th:for="${store.getStoreid()}" class="d-flex">
+                                    <input type="checkbox" th:id="${store.getStoreid()}" th:name="${store.getStoreid()}"
+                                           class="mr-2 mt-1">
+                                    <span class="text-black" th:text="${store.getStorename()}">Purebread</span>
+                                </label>
+                            </th:block>
+
+                            <!--                            <label for="s_md" class="d-flex">&ndash;&gt;-->
+                            <!--                                <input type="checkbox" id="bake1" class="mr-2 mt-1"> <span-->
+                            <!--                                    class="text-black">Purebread</span>-->
+                            <!--                            </label>-->
+                            <!--                            <label for="s_md" class="d-flex">-->
+                            <!--                                <input type="checkbox" id="bake2" class="mr-2 mt-1"> <span-->
+                            <!--                                    class="text-black">Cartem Donuts</span>-->
+                            <!--                            </label>-->
+                            <!--                            <label for="s_md" class="d-flex">-->
+                            <!--                                <input type="checkbox" id="bake3" class="mr-2 mt-1"> <span-->
+                            <!--                                    class="text-black">Thierry</span>-->
+                            <!--                            </label>-->
+                            <!--                            <label for="s_md" class="d-flex">-->
+                            <!--                                <input type="checkbox" id="bake4" class="mr-2 mt-1"> <span-->
+                            <!--                                    class="text-black">Small Victory Bakery</span>-->
+                            <!--                            </label>-->
+                            <!--                            <label for="s_md" class="d-flex">-->
+                            <!--                                <input type="checkbox" id="bake5" class="mr-2 mt-1"> <span-->
+                            <!--                                    class="text-black">Beaucoup Bakery</span>-->
+                            <!--                            </label>-->
+                            <!--                            <label for="s_md" class="d-flex">-->
+                            <!--                                <input type="checkbox" id="bake6" class="mr-2 mt-1"> <span-->
+                            <!--                                    class="text-black">True Confections</span>-->
+                            <!--                            </label>-->
+                            <!--                            <label for="s_md" class="d-flex">-->
+                            <!--                                <input type="checkbox" id="bake7" class="mr-2 mt-1"> <span-->
+                            <!--                                    class="text-black">Cadeaux Bakery</span>-->
+                            <!--                            </label>-->
+                            <!--                            <label for="s_md" class="d-flex">-->
+                            <!--                                <input type="checkbox" id="bake8" class="mr-2 mt-1"> <span-->
+                            <!--                                    class="text-black">Milkyway Inc.</span>-->
+                            <!--                            </label>-->
 
                         </div>
 

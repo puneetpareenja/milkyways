@@ -57,7 +57,8 @@
                     <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
                     <a href="/cart" class="icons-btn d-inline-block bag">
                         <span class="icon-shopping-bag"></span>
-                        <span class="number">2</span>
+                        <!--/*@thymesVar id="customer" type="com.runtimeterror.milkyways.entities.Customer"*/-->
+                        <span class="number" th:text="${customer.getCart().size()}">2</span>
                     </a>
                     <a href="/signin" class="icons-btn d-inline-block"><span class="icon-sign-in"></span></a>
                 </div>
@@ -205,7 +206,9 @@
                                 </a>
                                 <h2 class="item-title"><a href="#">Birthday Beeswax Candles</a></h2>
                                 <h2 class="bakery-title"><a href="#">Milkyway Inc.</a></h2>
-                                <strong class="item-price"><del>$5.00</del> $3.99</strong>
+                                <strong class="item-price">
+                                    <del>$5.00</del>
+                                    $3.99</strong>
 
                                 <div class="star-rating">
                                     <span class="icon-star2 text-warning"></span>
@@ -299,7 +302,8 @@
                     <h3 class="footer-heading mb-4">Promo</h3>
                     <a href="#" class="block-6">
                         <img src="images/candles.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
-                        <h3 class="font-weight-light  mb-0">Forgetting something? Order some candles with your cake!</h3>
+                        <h3 class="font-weight-light  mb-0">Forgetting something? Order some candles with your
+                            cake!</h3>
                         <p>Only for $3.99</p>
                     </a>
                 </div>
