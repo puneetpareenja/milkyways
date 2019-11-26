@@ -23,9 +23,26 @@ public class ShopController {
     StoreRepository storeRepository;
 
     @GetMapping("/shop")
-    public ModelAndView redirectToShop() {
+    public ModelAndView redirectToShop(
+            @RequestParam(defaultValue = "false", required = false) boolean glutenfree,
+            @RequestParam(defaultValue = "false", required = false) boolean sugarfree,
+            @RequestParam(defaultValue = "false", required = false) boolean dairyfree,
+            @RequestParam(defaultValue = "false", required = false) boolean vegetarian
+    ) {
+
         ModelAndView modelAndView = new ModelAndView("shop.html");
-        List<Item> itemlist = (List<Item>) itemRepository.findAll();
+        List<Item> itemlist;
+        if (glutenfree) {
+            itemlist = itemRepository.findAllByGlutenfreeIs(true);
+        } else if (sugarfree) {
+            itemlist = itemRepository.findAllBySugarfreeIs(true);
+        } else if (dairyfree) {
+            itemlist = itemRepository.findAllByDairyfreeIs(true);
+        } else if (vegetarian) {
+            itemlist = itemRepository.findAllByVegetarianIs(true);
+        } else {
+            itemlist = (List<Item>) itemRepository.findAll();
+        }
         List<Store> storelist = (List<Store>) storeRepository.findAll();
         modelAndView.addObject("items", itemlist);
         modelAndView.addObject("stores", storelist);
@@ -37,7 +54,7 @@ public class ShopController {
         ModelAndView modelAndView = new ModelAndView("shop-single.html");
         Item item = itemRepository.findById(id).orElse(new Item());
         if (item.getItemid() == 0) {
-            return redirectToShop();
+            return new ModelAndView("redirect:/shop");
         }
         modelAndView.addObject(item);
         return modelAndView;
