@@ -22,4 +22,6 @@ public interface ItemRepository extends CrudRepository<Item, Long> {
 
     public List<Item> findAllByTypeIs(boolean type);
 
+    public List<Item> findAllByStore_Storeid(long id);
+
 }

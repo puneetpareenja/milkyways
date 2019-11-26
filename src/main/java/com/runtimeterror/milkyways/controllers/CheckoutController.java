@@ -7,6 +7,7 @@ import com.runtimeterror.milkyways.repositories.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,30 +16,20 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class CheckoutController {
-    @GetMapping("/checkout")
-    public ModelAndView redirectToCheckout() {
-        ModelAndView modelAndView = new ModelAndView("checkout.html");
-
-        return modelAndView;
-    }
-
-    /*
-    @GetMapping("/cart")
-    public ModelAndView redirectToCart() {
-        ModelAndView modelAndView = new ModelAndView("cart.html");
-
-        return modelAndView;
-    } */
-
-
     @Autowired
     ItemRepository itemRepository;
     @Autowired
     CustomerRepository customerRepository;
 
+    @GetMapping("/checkout")
+    public ModelAndView redirectToCheckout() {
+        ModelAndView modelAndView = new ModelAndView("checkout.html");
+        return modelAndView;
+    }
 
-    @GetMapping("/cart")
-    public ModelAndView redirectToCart(HttpSession session, @RequestParam(defaultValue = "0") long id, @RequestParam(defaultValue= "1") int quantity) {
+
+    @RequestMapping("/cart")
+    public ModelAndView redirectToCart(HttpSession session, @RequestParam(defaultValue = "0") long id, @RequestParam(defaultValue = "1") int quantity) {
         ModelAndView modelAndView = new ModelAndView("cart.html");
         Item item = itemRepository.findById(id).orElse(new Item());
         //get customer from session
