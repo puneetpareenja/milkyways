@@ -457,3 +457,39 @@ org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert i
 values (1, 'Birthday letter donuts', 'For your loved ones, an untraditional alternative to cake. 13 letter donuts spelling out H.A.P.P.Y B.I.R.T.H.D.A.Y. Available in flavors of your choice including chocolate, vanilla bean, birthday cake and maple., 'birthday-donuts.jpg[*]', 9, true, false, false , false, false , 90.00, 5, 2)"; SQL statement:
 insert into item (itemid, name, description, imageurl, quantity, type, sugarfree, glutenfree, dairyfree, vegetarian, price, rating, store_storeid)
 values (1, 'Birthday letter donuts', 'For your loved ones, an untraditional alternative to cake. 13 letter donuts spelling out H.A.P.P.Y B.I.R.T.H.D.A.Y. Available in flavors of your choice including chocolate, vanilla bean, birthday cake and maple., 'birthday-donuts.jpg', 9, true, false, false , false, false , 90.00, 5, 2) [42000-199]
+2019-11-26 10:39:21 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'NULL' (ITEM: ""DAIRYFREE"" BOOLEAN NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ITEMID","DAIRYFREE","DESCRIPTION","GLUTENFREE","IMAGEURL","NAME","PRICE","QUANTITY","RATING","SUGARFREE","TYPE","VEGETARIAN","STORE_STOREID")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13) [22018-199]
+2019-11-26 10:39:21 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'NULL' (ITEM: ""DAIRYFREE"" BOOLEAN NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ITEMID","DAIRYFREE","DESCRIPTION","GLUTENFREE","IMAGEURL","NAME","PRICE","QUANTITY","RATING","SUGARFREE","TYPE","VEGETARIAN","STORE_STOREID")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13) [22018-199]
+2019-11-26 10:46:35 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (ITEM: ""DAIRYFREE"" BOOLEAN NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ITEMID","DAIRYFREE","DESCRIPTION","GLUTENFREE","IMAGEURL","NAME","PRICE","QUANTITY","RATING","SUGARFREE","TYPE","VEGETARIAN","STORE_STOREID")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13) [22018-199]
+2019-11-26 10:46:35 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (ITEM: ""DAIRYFREE"" BOOLEAN NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ITEMID","DAIRYFREE","DESCRIPTION","GLUTENFREE","IMAGEURL","NAME","PRICE","QUANTITY","RATING","SUGARFREE","TYPE","VEGETARIAN","STORE_STOREID")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13) [22018-199]
+2019-11-26 10:48:43 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (ITEM: ""DAIRYFREE"" BOOLEAN NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ITEMID","DAIRYFREE","DESCRIPTION","GLUTENFREE","IMAGEURL","NAME","PRICE","QUANTITY","RATING","SUGARFREE","TYPE","VEGETARIAN","STORE_STOREID")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13) [22018-199]
+2019-11-26 10:48:43 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (ITEM: ""DAIRYFREE"" BOOLEAN NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ITEMID","DAIRYFREE","DESCRIPTION","GLUTENFREE","IMAGEURL","NAME","PRICE","QUANTITY","RATING","SUGARFREE","TYPE","VEGETARIAN","STORE_STOREID")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13) [22018-199]
+2019-11-26 10:49:39 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'NULL' (ITEM: ""DAIRYFREE"" BOOLEAN NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ITEMID","DAIRYFREE","DESCRIPTION","GLUTENFREE","IMAGEURL","NAME","PRICE","QUANTITY","RATING","SUGARFREE","TYPE","VEGETARIAN","STORE_STOREID")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13) [22018-199]
+2019-11-26 10:49:39 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'NULL' (ITEM: ""DAIRYFREE"" BOOLEAN NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ITEMID","DAIRYFREE","DESCRIPTION","GLUTENFREE","IMAGEURL","NAME","PRICE","QUANTITY","RATING","SUGARFREE","TYPE","VEGETARIAN","STORE_STOREID")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13) [22018-199]
+2019-11-26 10:54:02 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (ITEM: ""DAIRYFREE"" BOOLEAN)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ITEMID","DAIRYFREE","DESCRIPTION","GLUTENFREE","IMAGEURL","NAME","PRICE","QUANTITY","RATING","SUGARFREE","TYPE","VEGETARIAN","STORE_STOREID")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13) [22018-199]
+2019-11-26 10:54:02 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (ITEM: ""DAIRYFREE"" BOOLEAN)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ITEMID","DAIRYFREE","DESCRIPTION","GLUTENFREE","IMAGEURL","NAME","PRICE","QUANTITY","RATING","SUGARFREE","TYPE","VEGETARIAN","STORE_STOREID")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13) [22018-199]
+2019-11-26 10:55:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'NULL' (ITEM: ""DAIRYFREE"" BOOLEAN)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ITEMID","DAIRYFREE","DESCRIPTION","GLUTENFREE","IMAGEURL","NAME","PRICE","QUANTITY","RATING","SUGARFREE","TYPE","VEGETARIAN","STORE_STOREID")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13) [22018-199]
+2019-11-26 10:55:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'NULL' (ITEM: ""DAIRYFREE"" BOOLEAN)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ITEMID","DAIRYFREE","DESCRIPTION","GLUTENFREE","IMAGEURL","NAME","PRICE","QUANTITY","RATING","SUGARFREE","TYPE","VEGETARIAN","STORE_STOREID")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13) [22018-199]

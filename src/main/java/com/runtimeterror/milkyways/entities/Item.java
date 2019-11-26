@@ -10,10 +10,15 @@ public class Item {
     private String name;
     private String imageurl;
     private int quantity;
+    @Column(nullable = true)
     private boolean type; //0: sweet, 1: savoury
+    @Column(nullable = true)
     private boolean sugarfree; //0: w/ sugar, 1: sugarfree
+    @Column(nullable = true)
     private boolean glutenfree; //0: not, 1: glutenfree
+    @Column(nullable = true)
     private boolean dairyfree; //0: not, 1: dairyfree
+    @Column(nullable = true)
     private boolean vegetarian; //0: not, 1: vegetarian
     private float price;
     private int rating; //1 to 5 stars
