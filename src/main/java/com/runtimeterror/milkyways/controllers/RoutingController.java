@@ -23,8 +23,14 @@ public class RoutingController {
     SalesRepository salesRepository;
 
     @GetMapping("/about")
-    public ModelAndView redirectToAbout() {
+    public ModelAndView redirectToAbout(HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("about.html");
+        Customer customer = (Customer) session.getAttribute("customer");
+        if (customer == null) {
+            customer = new Customer();
+            session.setAttribute("customer", customer);
+        }
+        modelAndView.addObject("customer", customer);
         return modelAndView;
     }
 
@@ -45,6 +51,7 @@ public class RoutingController {
         customer.setCart(new ArrayList<>());
         session.setAttribute("customer", customer);
         ModelAndView modelAndView = new ModelAndView("thankyou.html");
+        modelAndView.addObject("customer", customer);
         return modelAndView;
     }
 
@@ -53,15 +60,20 @@ public class RoutingController {
     ContactRepository contactRepository;
 
     @RequestMapping("/contact")
-    public ModelAndView redirectToContact(Contact contact) {
+    public ModelAndView redirectToContact(Contact contact, HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("contact.html");
+        Customer customer = (Customer) session.getAttribute("customer");
+        if (customer == null) {
+            customer = new Customer();
+            session.setAttribute("customer", customer);
+        }
         if (contact.getEmail() == null) {
             System.out.println("customer info not provided");
-            modelAndView = new ModelAndView("contact.html");
         } else {
             System.out.println("Saving customer with information \n" + contact);
             contactRepository.save(contact);
         }
+        modelAndView.addObject("customer", customer);
         return modelAndView;
     }
 

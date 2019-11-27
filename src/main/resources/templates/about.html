@@ -57,7 +57,8 @@
             <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
             <a href="/cart" class="icons-btn d-inline-block bag">
               <span class="icon-shopping-bag"></span>
-              <span class="number">2</span>
+              <!--/*@thymesVar id="customer" type="com.runtimeterror.milkyways.entities.Customer"*/-->
+              <span class="number" th:text="${customer.getCart().size()}">2</span>
             </a>
             <a href="/signin" class="icons-btn d-inline-block"><span class="icon-sign-in"></span></a>
           </div>

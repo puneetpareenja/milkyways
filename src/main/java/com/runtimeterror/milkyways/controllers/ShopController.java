@@ -1,5 +1,6 @@
 package com.runtimeterror.milkyways.controllers;
 
+import com.runtimeterror.milkyways.entities.Customer;
 import com.runtimeterror.milkyways.entities.Item;
 import com.runtimeterror.milkyways.entities.Store;
 import com.runtimeterror.milkyways.repositories.ItemRepository;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -29,8 +31,8 @@ public class ShopController {
             @RequestParam(defaultValue = "false", required = false) boolean dairyfree,
             @RequestParam(defaultValue = "false", required = false) boolean vegetarian,
             @RequestParam(defaultValue = "-1", required = false) int type,
-            @RequestParam(defaultValue = "0", required = false) long storeid
-
+            @RequestParam(defaultValue = "0", required = false) long storeid,
+            HttpSession session
     ) {
 
         ModelAndView modelAndView = new ModelAndView("shop.html");
@@ -53,33 +55,50 @@ public class ShopController {
             itemlist = (List<Item>) itemRepository.findAll();
         }
 
-
+        Customer customer = (Customer) session.getAttribute("customer");
+        if (customer == null) {
+            customer = new Customer();
+            session.setAttribute("customer", customer);
+        }
         List<Store> storelist = (List<Store>) storeRepository.findAll();
+        modelAndView.addObject("customer", customer);
         modelAndView.addObject("items", itemlist);
         modelAndView.addObject("stores", storelist);
         return modelAndView;
     }
 
     @GetMapping("/shop-single")
-    public ModelAndView redirectToShopSingle(@RequestParam(defaultValue = "0") long id) {
+    public ModelAndView redirectToShopSingle(@RequestParam(defaultValue = "0") long id, HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("shop-single.html");
         Item item = itemRepository.findById(id).orElse(new Item());
+        Customer customer = (Customer) session.getAttribute("customer");
+        if (customer == null) {
+            customer = new Customer();
+            session.setAttribute("customer", customer);
+        }
         if (item.getItemid() == 0) {
             return new ModelAndView("redirect:/shop");
         }
+        modelAndView.addObject("customer", customer);
         modelAndView.addObject(item);
         return modelAndView;
     }
 
     @RequestMapping("/search")
-    public ModelAndView searchItem(@RequestParam(defaultValue = "") String text) {
+    public ModelAndView searchItem(@RequestParam(defaultValue = "") String text, HttpSession session) {
         System.out.println(text);
 
+        Customer customer = (Customer) session.getAttribute("customer");
+        if (customer == null) {
+            customer = new Customer();
+            session.setAttribute("customer", customer);
+        }
         ModelAndView modelAndView = new ModelAndView("shop.html");
         List<Item> itemlist = itemRepository.findAllByNameContainingIgnoreCase(text);
         modelAndView.addObject("items", itemlist);
         List<Store> storelist = (List<Store>) storeRepository.findAll();
         modelAndView.addObject("stores", storelist);
+        modelAndView.addObject("customer", customer);
         return modelAndView;
     }
 }

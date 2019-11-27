@@ -53,6 +53,7 @@ public class CheckoutController {
 
         if (customer == null) {
             customer = new Customer();
+            session.setAttribute("customer", customer);
         }
 
         Item item;
@@ -68,6 +69,7 @@ public class CheckoutController {
             total += cartItem.getQuantity() * cartItem.getPrice();
         }
 
+        modelAndView.addObject("customer", customer);
         modelAndView.addObject("cart", customer.getCart());
         modelAndView.addObject("total", total);
         return modelAndView;

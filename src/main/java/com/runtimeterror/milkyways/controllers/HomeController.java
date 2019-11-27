@@ -25,6 +25,7 @@ public class HomeController {
         Customer customer = (Customer) session.getAttribute("customer");
         if (customer == null) {
             customer = new Customer();
+            session.setAttribute("customer", customer);
         }
 
         ModelAndView modelAndView = new ModelAndView("index.html");
