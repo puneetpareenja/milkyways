@@ -17,7 +17,7 @@ public class Sales {
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
 
-    @OneToMany
+    @ManyToMany
     private List<Item> itemlist = new ArrayList<>();
 
     private double total;
