@@ -1,7 +1,11 @@
 package com.runtimeterror.milkyways.controllers;
 
+import com.runtimeterror.milkyways.entities.Contact;
+import com.runtimeterror.milkyways.repositories.ContactRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -21,9 +25,20 @@ public class RoutingController {
         return modelAndView;
     }
 
-    @GetMapping("/contact")
-    public ModelAndView redirectToContact() {
+
+    @Autowired
+    ContactRepository contactRepository;
+
+    @RequestMapping("/contact")
+    public ModelAndView redirectToContact(Contact contact) {
         ModelAndView modelAndView = new ModelAndView("contact.html");
+        if (contact.getEmail() == null) {
+            System.out.println("customer info not provided");
+            modelAndView = new ModelAndView("contact.html");
+        } else {
+            System.out.println("Saving customer with information \n" + contact);
+            contactRepository.save(contact);
+        }
         return modelAndView;
     }
 
