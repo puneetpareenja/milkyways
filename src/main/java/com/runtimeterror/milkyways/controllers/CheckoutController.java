@@ -29,7 +29,9 @@ public class CheckoutController {
 
 
     @RequestMapping("/cart")
-    public ModelAndView redirectToCart(HttpSession session, @RequestParam(defaultValue = "0") long id, @RequestParam(defaultValue = "1") int quantity) {
+    public ModelAndView redirectToCart(
+            HttpSession session, @RequestParam(defaultValue = "0") long id,
+            @RequestParam(defaultValue = "1") int quantity) {
         ModelAndView modelAndView = new ModelAndView("cart.html");
         Item item = itemRepository.findById(id).orElse(new Item());
         //get customer from session

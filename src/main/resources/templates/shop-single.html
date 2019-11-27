@@ -66,7 +66,7 @@
                     <span class="mx-2 mb-0">/</span>
                     <a href="/shop" th:text="${item.getStore().getStorename()}">Shop</a>
                     <span class="mx-2 mb-0">/</span>
-                    <strong class="text-black"th:text="${item.getName()}">Lava cake</strong></div>
+                    <strong class="text-black" th:text="${item.getName()}">Lava cake</strong></div>
             </div>
         </div>
     </div>
@@ -74,40 +74,63 @@
     <div class="site-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="item-entry">
-                        <a href="#" class="product-item md-height bg-gray d-block">
-                            <img th:src="${'images/' + item.getImageurl()}" alt="Image" class="img-fluid">
-                        </a>
-                    </div>
-
-                </div>
-                <div class="col-md-6">
-                    <p class="text-capitalize text-primary h5" th:text="${item.getStore().getStorename()}">Store
-                        Name</p>
-                    <h2 class="text-secondary" th:text="${item.getName()}">I lava you cake</h2>
-
-                    <p th:text="${item.getDescription()}">Choco lava cake made using homemade dark chocolate with
-                        seasonal berries. Best served straight out of the oven or re-heated at 375 degrees F. </p>
-                    <!--            <p class="mb-4">Tip: Serve with a scoop of vanilla ice cream.</p>-->
-                    <p><strong class="text-primary h4"
-                               th:text="${#numbers.formatCurrency(item.getPrice())}">$10.00</strong></p>
-
-                    <div class="mb-5">
-                        <div class="input-group mb-3" style="max-width: 120px;">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
-                            </div>
-                                <input type="text" id="quantity" name="quantity" class="form-control text-center" value="1" placeholder=""
-                                       aria-label="Example text with button addon" aria-describedby="button-addon1">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                <div class="col-md-12">
+                    <form action="/cart">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="item-entry">
+                                    <a href="#" class="product-item md-height bg-gray d-block">
+                                        <img th:src="${'images/' + item.getImageurl()}" alt="Image" class="img-fluid">
+                                    </a>
                                 </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <p class="text-capitalize text-primary h5" th:text="${item.getStore().getStorename()}">
+                                    Store
+                                    Name</p>
+                                <h2 class="text-secondary" th:text="${item.getName()}">I lava you cake</h2>
+
+                                <p th:text="${item.getDescription()}">Choco lava cake made using homemade dark chocolate
+                                    with
+                                    seasonal berries. Best served straight out of the oven or re-heated at 375 degrees
+                                    F. </p>
+                                <p><strong class="text-primary h4"
+                                           th:text="${#numbers.formatCurrency(item.getPrice())}">$10.00</strong></p>
+
+                                <div class="mb-5">
+                                    <input type="hidden" id="id" name="id"
+                                           class="form-control text-center"
+                                           th:value="${item.getItemid()}" placeholder=""
+                                           aria-label="Hidden item id"
+                                           aria-describedby="hidden text">
+                                    <div class="input-group mb-3" style="max-width: 120px;">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;
+                                            </button>
+                                        </div>
+                                        <input type="text" id="quantity" name="quantity"
+                                               class="form-control text-center"
+                                               value="1" placeholder=""
+                                               aria-label="Example text with button addon"
+                                               aria-describedby="button-addon1">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p>
+                                    <button class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary" type="submit">
+                                        Add
+                                        To Cart
+                                    </button>
+                                </p>
+
+                            </div>
                         </div>
-                    </div>
-
-                    <p><a th:href="${'/cart?id=' + item.getItemid() + '&quantity=6'}" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary" type="submit">Add To Cart</a></p>
-
+                    </form>
                 </div>
             </div>
         </div>
