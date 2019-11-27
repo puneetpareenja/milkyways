@@ -60,13 +60,13 @@
                 </div>
                 <div class="icons">
                     <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-                    <a href="#" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
                     <a href="/cart" class="icons-btn d-inline-block bag">
                         <span class="icon-shopping-bag"></span>
                         <!--/*@thymesVar id="customer" type="com.runtimeterror.milkyways.entities.Customer"*/-->
                         <span class="number" th:text="${customer.getCart().size()}">2</span>                    </a>
                     <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
                             class="icon-menu"></span></a>
+                    <a href="/signin" class="icons-btn d-inline-block"><span class="icon-sign-in"></span></a>
                 </div>
             </div>
         </div>
@@ -80,20 +80,41 @@
             </div>
         </div>
     </div>
+
+
+
     <div th:if="${cart.size()==0}" class="site-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-9 ">
-                    <img src="images/emptycart.png" alt="Empty Cart Image">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 ">
-                    <button class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</button>
+                <div class="col-md-12 text-center">
+                    <img height="350" width="auto" src="images/empty_cart.gif" alt="Empty Cart Image">
+                    <h5 class="text-black">Your cart is empty!</h5>
+                    <p class="lead mb-5">Please add items to your cart to proceed.</p>
+                    <p><a href="/shop" class="btn btn-sm height-auto px-4 py-3 btn-primary">Back to shop</a></p>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+
+
+
+<!--    <div th:if="${cart.size()==0}" class="site-section">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-6 align-middle">-->
+<!--                    <img height="350" width="auto" src="images/emptycart.png" alt="Empty Cart Image">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-6">-->
+<!--                    <button class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
     <div th:unless="${cart.size()==0}" class="site-section">
         <div class="container">
@@ -220,11 +241,11 @@
             <div class="row">
                 <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
                     <h3 class="footer-heading mb-4">Promo</h3>
-                    <a href="#" class="block-6">
-                        <img src="images/candles.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
-                        <h3 class="font-weight-light  mb-0">Forgetting something? Order some candles with your
-                            cake!</h3>
-                        <p>Only for $3.99</p>
+                    <a href="/shop-single?id=13" class="block-6">
+                        <img src="images/cupcake.gif" alt="Image placeholder" class="img-fluid rounded mb-4">
+                        <h3 class="font-weight-light mb-0">Milkyway is expanding!
+                            Try our first menu item now available for a limited time.</h3>
+                        <p>*Only available through fall/winter.</p>
                     </a>
                 </div>
                 <div class="col-lg-5 ml-auto mb-5 mb-lg-0">

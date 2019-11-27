@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 
-
 @Controller
 public class CheckoutController {
     @Autowired
@@ -31,6 +30,8 @@ public class CheckoutController {
         }
         System.out.println(customer.getCustomerid());
         boolean isLoggedIn = customer.getCustomerid() != 0;
+        if(!isLoggedIn)
+            return new ModelAndView("redirect:/signin");
         ModelAndView modelAndView = new ModelAndView("checkout.html");
         double total = 0;
         for (Item cartItem : customer.getCart()) {
