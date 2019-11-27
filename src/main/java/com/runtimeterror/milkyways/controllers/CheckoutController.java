@@ -22,8 +22,24 @@ public class CheckoutController {
     CustomerRepository customerRepository;
 
     @GetMapping("/checkout")
-    public ModelAndView redirectToCheckout() {
+    public ModelAndView redirectToCheckout(HttpSession session) {
+        Customer customer = (Customer) session.getAttribute("customer");
+
+        if (customer == null) {
+            customer = new Customer();
+            session.setAttribute("customer", customer);
+        }
+        System.out.println(customer.getCustomerid());
+        boolean isLoggedIn = customer.getCustomerid() != 0;
         ModelAndView modelAndView = new ModelAndView("checkout.html");
+        double total = 0;
+        for (Item cartItem : customer.getCart()) {
+            total += cartItem.getQuantity() * cartItem.getPrice();
+        }
+        modelAndView.addObject("logged", isLoggedIn);
+        modelAndView.addObject("cart", customer.getCart());
+        modelAndView.addObject("total", total);
+        modelAndView.addObject("customer", customer);
         return modelAndView;
     }
 
@@ -49,7 +65,7 @@ public class CheckoutController {
 
         double total = 0;
         for (Item cartItem : customer.getCart()) {
-            total+= cartItem.getQuantity()*cartItem.getPrice();
+            total += cartItem.getQuantity() * cartItem.getPrice();
         }
 
         modelAndView.addObject("cart", customer.getCart());
