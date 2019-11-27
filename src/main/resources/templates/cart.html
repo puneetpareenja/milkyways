@@ -21,8 +21,10 @@
 
 </head>
 <body>
-<!--/*@thymesVar id="item" type="com.runtimeterror.milkyways.entities.Item"*/-->
-<!--/*@thymesVar id="quantity" type="com.runtimeterror.milkyways.entities.Item.quantity"*/-->
+<!--/*@thymesVar id="cart" type="java.util.List<Item>"*/-->
+<!--/*@thymesVar id="size()" type="java.util.List<Item>.size()"*/-->
+<!--/*@thymesVar id="total" type="java.lang.Double"*/-->
+
 <div class="site-wrap">
 
 
@@ -78,8 +80,22 @@
             </div>
         </div>
     </div>
+    <div th:if="${cart.size()==0}" class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 ">
+                    <img src="images/emptycart.png" alt="Empty Cart Image">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 ">
+                    <button class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div class="site-section">
+    <div th:unless="${cart.size()==0}" class="site-section">
         <div class="container">
             <div class="row mb-5">
                 <form class="col-md-12" method="post">
@@ -96,62 +112,40 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td class="product-thumbnail">
-                                    <img th:src="${'images/' + item.getImageurl()}" alt="Image" class="img-fluid">
-                                </td>
-                                <td class="product-name">
-                                    <h2 class="h5 text-black" th:text="${item.getName()}">Happy Birthday Letter
-                                        Donuts</h2>
-                                </td>
-                                <td th:text="${#numbers.formatCurrency(item.getPrice())}"></td>
-                                <td>
-                                    <div class="input-group mb-3" style="max-width: 120px;">
-                                        <div class="input-group-prepend">
-                                            <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;
-                                            </button>
-                                        </div>
-                                        <input type="text" class="form-control text-center" th:value="${item.quantity}"
-                                               placeholder="" aria-label="Example text with button addon"
-                                               aria-describedby="button-addon1">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;
-                                            </button>
-                                        </div>
-                                    </div>
+                            <!--/*@thymesVar id="item" type="com.runtimeterror.milkyways.entities.Item"*/-->
 
-                                </td>
-                                <td th:text="${#numbers.formatCurrency(item.getPrice())}"></td>
-                                <td><a href="#" class="btn btn-primary height-auto btn-sm">X</a></td>
-                            </tr>
-
-                            <tr>
-                                <td class="product-thumbnail">
-                                    <img src="images/candles.jpg" alt="Image" class="img-fluid">
-                                </td>
-                                <td class="product-name">
-                                    <h2 class="h5 text-black">Birthday Candles</h2>
-                                </td>
-                                <td>$3.99</td>
-                                <td>
-                                    <div class="input-group mb-3" style="max-width: 120px;">
-                                        <div class="input-group-prepend">
-                                            <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;
-                                            </button>
+                            <th:block th:each="item: ${cart}">
+                                <tr>
+                                    <td class="product-thumbnail">
+                                        <img th:src="${'images/' + item.getImageurl()}" alt="Image" class="img-fluid">
+                                    </td>
+                                    <td class="product-name">
+                                        <h2 class="h5 text-black" th:text="${item.getName()}">Happy Birthday Letter
+                                            Donuts</h2>
+                                    </td>
+                                    <td th:text="${#numbers.formatCurrency(item.getPrice())}"></td>
+                                    <td>
+                                        <div class="input-group mb-3" style="max-width: 120px;">
+                                            <div class="input-group-prepend">
+                                                <button class="btn btn-outline-primary js-btn-minus" type="button">
+                                                    &minus;
+                                                </button>
+                                            </div>
+                                            <input type="text" class="form-control text-center"
+                                                   th:value="${item.quantity}"
+                                                   placeholder="" aria-label="Example text with button addon"
+                                                   aria-describedby="button-addon1">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;
+                                                </button>
+                                            </div>
                                         </div>
-                                        <input type="text" class="form-control text-center" value="1" placeholder=""
-                                               aria-label="Example text with button addon"
-                                               aria-describedby="button-addon1">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;
-                                            </button>
-                                        </div>
-                                    </div>
 
-                                </td>
-                                <td>$3.99</td>
-                                <td><a href="#" class="btn btn-primary height-auto btn-sm">X</a></td>
-                            </tr>
+                                    </td>
+                                    <td th:text="${#numbers.formatCurrency(item.getPrice()*item.quantity)}"></td>
+                                    <td><a href="#" class="btn btn-primary height-auto btn-sm">X</a></td>
+                                </tr>
+                            </th:block>
                             </tbody>
                         </table>
                     </div>
@@ -165,7 +159,7 @@
                             <button class="btn btn-primary btn-sm btn-block">Update Cart</button>
                         </div>
                         <div class="col-md-6">
-                            <button class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</button>
+                            <a href="/shop"><button class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</button></a>
                         </div>
                     </div>
                     <div class="row">
@@ -194,7 +188,8 @@
                                     <span class="text-black">Subtotal</span>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <strong class="text-black">$93.99</strong>
+
+                                    <strong class="text-black" th:text="${#numbers.formatCurrency(total)}">$93.99</strong>
                                 </div>
                             </div>
                             <div class="row mb-5">
@@ -202,7 +197,7 @@
                                     <span class="text-black">Total</span>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <strong class="text-black">$93.99</strong>
+                                    <strong class="text-black" th:text="${#numbers.formatCurrency(total)}">$93.99</strong>
                                 </div>
                             </div>
 

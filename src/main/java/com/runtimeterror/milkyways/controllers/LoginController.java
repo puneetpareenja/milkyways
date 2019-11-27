@@ -26,6 +26,12 @@ public class LoginController {
             System.out.println("Saving customer with information \n" + customer);
             customerRepository.save(customer);
             customer = customerRepository.findByEmail(customer.getEmail());
+
+            Customer sessionCustomer = (Customer) session.getAttribute("customer");
+            if (sessionCustomer != null) {
+                customer.setCart(sessionCustomer.getCart());
+            }
+
             System.out.println("Customer Saved. Redirecting to home.");
             session.setAttribute("customer", customer);
             modelAndView = new ModelAndView("redirect:/");
@@ -54,6 +60,10 @@ public class LoginController {
                 System.out.println("Login Successful");
                 modelAndView = new ModelAndView("redirect:/");
                 Customer customer = customerRepository.findByEmail(email);
+                Customer sessionCustomer = (Customer) session.getAttribute("customer");
+                if (sessionCustomer != null) {
+                    customer.setCart(sessionCustomer.getCart());
+                }
                 session.setAttribute("customer", customer);
                 modelAndView.addObject("customer", customer);
             } else {

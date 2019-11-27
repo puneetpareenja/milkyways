@@ -31,19 +31,29 @@ public class CheckoutController {
     @RequestMapping("/cart")
     public ModelAndView redirectToCart(
             HttpSession session, @RequestParam(defaultValue = "0") long id,
-            @RequestParam(defaultValue = "1") int quantity) {
+            @RequestParam(defaultValue = "0") int quantity) {
         ModelAndView modelAndView = new ModelAndView("cart.html");
-        Item item = itemRepository.findById(id).orElse(new Item());
-        //get customer from session
         Customer customer = (Customer) session.getAttribute("customer");
+
         if (customer == null) {
             customer = new Customer();
         }
-        //create the list
-        item.setQuantity(quantity);
-        customer.getCart().add(item);
 
-        modelAndView.addObject(item);
+        Item item;
+        if (id != 0) {
+            item = itemRepository.findById(id).orElse(new Item());
+            item.setQuantity(quantity);
+            customer.getCart().add(item);
+            session.setAttribute("customer", customer);
+        }
+
+        double total = 0;
+        for (Item cartItem : customer.getCart()) {
+            total+= cartItem.getQuantity()*cartItem.getPrice();
+        }
+
+        modelAndView.addObject("cart", customer.getCart());
+        modelAndView.addObject("total", total);
         return modelAndView;
     }
 }
