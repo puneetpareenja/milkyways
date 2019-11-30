@@ -63,7 +63,7 @@
                     <a href="/cart" class="icons-btn d-inline-block bag">
                         <span class="icon-shopping-bag"></span>
                         <!--/*@thymesVar id="customer" type="com.runtimeterror.milkyways.entities.Customer"*/-->
-                        <span class="number" th:text="${customer.getCart().size()}">2</span>                    </a>
+                        <span class="number" th:text="${customer.getCart().size()}">2</span> </a>
                     <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
                             class="icon-menu"></span></a>
                     <a href="/signin" class="icons-btn d-inline-block"><span class="icon-sign-in"></span></a>
@@ -82,7 +82,6 @@
     </div>
 
 
-
     <div th:if="${cart.size()==0}" class="site-section">
         <div class="container">
             <div class="row">
@@ -97,24 +96,20 @@
     </div>
 
 
-
-
-
-
-<!--    <div th:if="${cart.size()==0}" class="site-section">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-md-6 align-middle">-->
-<!--                    <img height="350" width="auto" src="images/emptycart.png" alt="Empty Cart Image">-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="row">-->
-<!--                <div class="col-md-6">-->
-<!--                    <button class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <!--    <div th:if="${cart.size()==0}" class="site-section">-->
+    <!--        <div class="container">-->
+    <!--            <div class="row">-->
+    <!--                <div class="col-md-6 align-middle">-->
+    <!--                    <img height="350" width="auto" src="images/emptycart.png" alt="Empty Cart Image">-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="row">-->
+    <!--                <div class="col-md-6">-->
+    <!--                    <button class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</button>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 
     <div th:unless="${cart.size()==0}" class="site-section">
         <div class="container">
@@ -164,7 +159,8 @@
 
                                     </td>
                                     <td th:text="${#numbers.formatCurrency(item.getPrice()*item.quantity)}"></td>
-                                    <td><a href="#" class="btn btn-primary height-auto btn-sm">X</a></td>
+                                    <td><a th:href="${'/removeitem?id=' + item.getItemid()}" class="btn btn-primary
+                                        height-auto btn-sm">X</a></td>
                                 </tr>
                             </th:block>
                             </tbody>
@@ -180,7 +176,9 @@
                             <button class="btn btn-primary btn-sm btn-block">Update Cart</button>
                         </div>
                         <div class="col-md-6">
-                            <a href="/shop"><button class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</button></a>
+                            <a href="/shop">
+                                <button class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</button>
+                            </a>
                         </div>
                     </div>
                     <div class="row">
@@ -210,7 +208,8 @@
                                 </div>
                                 <div class="col-md-6 text-right">
 
-                                    <strong class="text-black" th:text="${#numbers.formatCurrency(total)}">$93.99</strong>
+                                    <strong class="text-black"
+                                            th:text="${#numbers.formatCurrency(total)}">$93.99</strong>
                                 </div>
                             </div>
                             <div class="row mb-5">
@@ -218,7 +217,8 @@
                                     <span class="text-black">Total</span>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <strong class="text-black" th:text="${#numbers.formatCurrency(total)}">$93.99</strong>
+                                    <strong class="text-black"
+                                            th:text="${#numbers.formatCurrency(total)}">$93.99</strong>
                                 </div>
                             </div>
 
